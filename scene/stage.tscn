@@ -8,7 +8,7 @@
 [ext_resource path="res://scene/enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/parallax_bg.tscn" type="PackedScene" id=7]
 [ext_resource path="res://asset/sound/music.ogg" type="AudioStream" id=8]
-[ext_resource path="res://scene/timeController.gd" type="Script" id=9]
+[ext_resource path="res://script/timeController.gd" type="Script" id=9]
 
 [node name="stage" type="Node"]
 
