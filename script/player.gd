@@ -15,12 +15,16 @@ var onair_time = 0 #
 var on_floor = false
 var shoot_time=99999 #time since last shot
 
+var isRewinding = false
+
 var anim=""
 
 #cache the sprite here for fast access (we will set scale to flip it often)
 onready var sprite = $sprite
 
 func _physics_process(delta):
+	if isRewinding:
+		return
 	#increment counters
 
 	onair_time += delta
