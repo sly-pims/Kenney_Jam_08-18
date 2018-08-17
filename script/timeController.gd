@@ -1,8 +1,8 @@
 extends Node
 
 # How many frames to rewind by
-const rewindTime = 60 * 1
-const rewindSpeed = 2
+const rewindTime = 60 * 3
+const rewindSpeed = 3
 
 var Frame = load('res://script/frame.gd')
 
