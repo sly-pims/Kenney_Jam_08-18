@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_tileset"
+type="Resource"
+path="res://.import/GrassSet.tpset-48f80e19528c61734fdb810c9dbe599d.res"
+
+[deps]
+
+files=[ "GrassSet.png", "res://asset/Kenney_Assets/GrassSet.sprites/GrassSet.res" ]
+
+source_file="res://asset/Kenney_Assets/GrassSet.sprites/GrassSet.tpset"
+dest_files=[ "res://.import/GrassSet.tpset-48f80e19528c61734fdb810c9dbe599d.res", "GrassSet.png", "res://asset/Kenney_Assets/GrassSet.sprites/GrassSet.res" ]
+
+[params]
+

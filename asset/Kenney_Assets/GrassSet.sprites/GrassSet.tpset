@@ -1,0 +1,288 @@
+{
+	"textures": [
+		{
+			"image": "GrassSet.png",
+			"size": {
+				"w": 390,
+				"h": 727
+			},
+			"sprites": [
+				{
+					"filename": "grassHalf.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "grassHalf_left.png",
+					"region": {
+						"x": 131,
+						"y": 1,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "grassHalf_mid.png",
+					"region": {
+						"x": 261,
+						"y": 1,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "grassHalf_right.png",
+					"region": {
+						"x": 1,
+						"y": 78,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "grass.png",
+					"region": {
+						"x": 131,
+						"y": 78,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassCenter.png",
+					"region": {
+						"x": 261,
+						"y": 78,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassCenter_round.png",
+					"region": {
+						"x": 1,
+						"y": 155,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassCliffAlt_left.png",
+					"region": {
+						"x": 131,
+						"y": 208,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassCliffAlt_right.png",
+					"region": {
+						"x": 261,
+						"y": 208,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassCliff_left.png",
+					"region": {
+						"x": 1,
+						"y": 285,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassCliff_right.png",
+					"region": {
+						"x": 131,
+						"y": 338,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassCorner_left.png",
+					"region": {
+						"x": 261,
+						"y": 338,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassCorner_right.png",
+					"region": {
+						"x": 1,
+						"y": 415,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassHill_left.png",
+					"region": {
+						"x": 131,
+						"y": 468,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassHill_right.png",
+					"region": {
+						"x": 261,
+						"y": 468,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassLeft.png",
+					"region": {
+						"x": 1,
+						"y": 545,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassMid.png",
+					"region": {
+						"x": 131,
+						"y": 598,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "grassRight.png",
+					"region": {
+						"x": 261,
+						"y": 598,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:df5f53880e2fe4164f29382552ec858e:edd01733f3eaf23812e485d36fb6ba53:8b6b8d78417f15803bb284df4782b63b$"
+	}
+}
