@@ -27,6 +27,7 @@ func _physics_process(delta):
 
 	if isRewinding:
 		return
+	$anim.play()
 	#increment counters
 	lifeTime -= delta;
 	onair_time += delta
@@ -101,5 +102,21 @@ func _physics_process(delta):
 		new_anim += "_weapon"
 
 	if new_anim != anim:
-		anim = new_anim
+		loadAndPlayAnim(new_anim)
+
+func loadAndPlayAnim(new_anim, delta = null, backwards = false):
+	if anim == new_anim:
+		return
+	anim = new_anim
+	# Check if we're playing the animation backwards or not
+	print(anim, delta, backwards)
+	if backwards:
+		$anim.play_backwards(anim)
+	else:
 		$anim.play(anim)
+	# Advance frames
+	if delta:
+		$anim.advance(delta)
+	
+func stopAnim():
+	$anim.stop(false)

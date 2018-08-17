@@ -13,10 +13,16 @@ var frames = []
 onready var player1 = get_node("../player")
 
 func _process(delta):
-	if rewindFramesLeft <= 0:
-		var playerInfo1 = Frame.new(player1.position, player1.linear_vel, player1.lifeTime)
+	if rewindFramesLeft <= 0 && !isRewinding:
+		var playerInfo1 = Frame.new(
+		 delta,
+		 player1.position,
+		 player1.linear_vel,
+		 player1.lifeTime,
+		 player1.anim,
+		 player1.sprite.scale.x)
 		frames.push_front(playerInfo1)
-	else:
+	elif rewindFramesLeft > 0 && isRewinding:
 		# Get previous frame
 		var previousFrame = frames.pop_front()
 		# Check if there is no more frames to rewind by
@@ -26,16 +32,26 @@ func _process(delta):
 		# Set old position to the player
 		player1.position = previousFrame.getPosition()
 		player1.lifeTime = previousFrame.getLifeTime()
+		
+		player1.sprite.scale.x = previousFrame.getScaleX()
 		# Decrement the rewind frames
 		rewindFramesLeft -= rewindSpeed
 		# Scrub frames
-		popFrames(rewindSpeed - 1)
+		var elapsedDelta = previousFrame.getDelta() + popFramesAndGetDelta(rewindSpeed - 1)
+		
+		player1.loadAndPlayAnim(previousFrame.getAnim(), elapsedDelta, true)
+		
 		if rewindFramesLeft <= 0:
 			player1.linear_vel = previousFrame.getVelocity()
+	else:
+		player1.stopAnim()
 
-func popFrames(count):
+func popFramesAndGetDelta(count):
+	var totalDelta = 0
 	for i in range(count):
-		frames.pop_front()
+		var frame = frames.pop_front()
+		totalDelta += frames.getDelta()
+	return totalDelta
 
 func rewindTime():
 	isRewinding = true
