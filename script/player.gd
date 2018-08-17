@@ -25,12 +25,10 @@ onready var sprite = $sprite
 
 func _physics_process(delta):
 
-	lifeTime -= delta;
-
 	if isRewinding:
 		return
 	#increment counters
-
+	lifeTime -= delta;
 	onair_time += delta
 	shoot_time += delta
 
