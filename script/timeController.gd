@@ -50,7 +50,7 @@ func popFramesAndGetDelta(count):
 	var totalDelta = 0
 	for i in range(count):
 		var frame = frames.pop_front()
-		totalDelta += frames.getDelta()
+		totalDelta += frame.getDelta()
 	return totalDelta
 
 func rewindTime():
