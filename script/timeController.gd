@@ -14,7 +14,7 @@ onready var player1 = get_node("../player")
 
 func _process(delta):
 	if rewindFramesLeft <= 0:
-		var playerInfo1 = Frame.new(player1.position, player1.linear_vel)
+		var playerInfo1 = Frame.new(player1.position, player1.linear_vel, player1.lifeTime)
 		frames.push_front(playerInfo1)
 	else:
 		# Get previous frame
@@ -25,6 +25,7 @@ func _process(delta):
 			return
 		# Set old position to the player
 		player1.position = previousFrame.getPosition()
+		player1.lifeTime = previousFrame.getLifeTime()
 		# Decrement the rewind frames
 		rewindFramesLeft -= rewindSpeed
 		# Scrub frames
