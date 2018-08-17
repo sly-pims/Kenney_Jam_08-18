@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://asset/sprite/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scene/coin.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scene/enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/parallax_bg.tscn" type="PackedScene" id=7]
 [ext_resource path="res://asset/sound/music.ogg" type="AudioStream" id=8]
+[ext_resource path="res://scene/timeController.gd" type="Script" id=9]
 
 [node name="stage" type="Node" index="0"]
 
@@ -378,5 +379,9 @@ pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
+
+[node name="timeController" type="Node" parent="." index="8"]
+
+script = ExtResource( 9 )
 
 
