@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/Test1.tpsheet-8428c749855df13231d4eb32825e8864.res"
+
+[deps]
+
+files=[ "res://asset/Kenney_Assets/Test1.sprites/dirtHalf.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtHalf_left.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtHalf_mid.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtHalf_right.tres", "res://asset/Kenney_Assets/Test1.sprites/dirt.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCenter.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCenter_rounded.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCliffAlt_left.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCliffAlt_right.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCliff_left.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCliff_right.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCorner_left.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCorner_right.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtHill_left.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtHill_right.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtLeft.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtMid.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtRight.tres" ]
+
+source_file="res://asset/Kenney_Assets/Test1.tpsheet"
+dest_files=[ "res://.import/Test1.tpsheet-8428c749855df13231d4eb32825e8864.res", "res://asset/Kenney_Assets/Test1.sprites/dirtHalf.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtHalf_left.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtHalf_mid.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtHalf_right.tres", "res://asset/Kenney_Assets/Test1.sprites/dirt.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCenter.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCenter_rounded.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCliffAlt_left.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCliffAlt_right.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCliff_left.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCliff_right.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCorner_left.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtCorner_right.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtHill_left.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtHill_right.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtLeft.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtMid.tres", "res://asset/Kenney_Assets/Test1.sprites/dirtRight.tres" ]
+
+[params]
+
