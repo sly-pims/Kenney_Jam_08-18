@@ -14,6 +14,7 @@ var linear_vel = Vector2()
 var onair_time = 0 #
 var on_floor = false
 var shoot_time=99999 #time since last shot
+var lifeTime = 30;
 
 var isRewinding = false
 
@@ -23,6 +24,9 @@ var anim=""
 onready var sprite = $sprite
 
 func _physics_process(delta):
+
+	lifeTime -= delta;
+
 	if isRewinding:
 		return
 	#increment counters
