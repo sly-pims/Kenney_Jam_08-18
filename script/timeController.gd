@@ -50,6 +50,8 @@ func popFramesAndGetDelta(count):
 	var totalDelta = 0
 	for i in range(count):
 		var frame = frames.pop_front()
+		if !frame:
+			return totalDelta
 		totalDelta += frame.getDelta()
 	return totalDelta
 
