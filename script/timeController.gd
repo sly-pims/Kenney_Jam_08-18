@@ -20,6 +20,8 @@ onready var timer = get_node('timer')
 
 var playerCount = 2
 
+onready var vhsShader = get_node('../Camera2D/vhsShader')
+
 func _process(delta):
 	if rewindFramesLeft <= 0 && !isRewinding:
 		var playerFrames = []
@@ -31,7 +33,6 @@ func _process(delta):
 		frames.push_front(currentFrame)
 		
 	elif rewindFramesLeft > 0 && isRewinding:
-		print(rewindFramesLeft)
 		# Scrub frames
 		var elapsedDelta = popFramesAndGetDelta(rewindSpeed - 1)
 		
@@ -102,6 +103,7 @@ func stopPlayerAnim():
 		
 func rewindTime():
 	setPlayersRewinding(true)
+	vhsShader.visible = true
 	timer.start()
 
 func _rewindTime():
@@ -111,6 +113,7 @@ func _rewindTime():
 
 func resumeTime():
 	isRewinding = false
+	vhsShader.visible = false
 	setPlayersRewinding(false)
 
 func _input(event):
