@@ -14,6 +14,7 @@ const BLUE_FRAMES = preload('res://asset/sprite/alienBlue.sprites/spriteFrames.t
 const FRAMES = [BEIGE_FRAMES, BLUE_FRAMES]
 
 onready var SPRITE_SCALE = $sprite.scale.x
+onready var TimeController = get_node('../timeController')
 var linear_vel = Vector2()
 var onair_time = 0 #
 var on_floor = false
@@ -30,14 +31,17 @@ onready var sprite = $sprite
 func _ready():
 	playerIndex = self.name[self.name.length() - 1]
 	$sprite.set_sprite_frames(FRAMES[int(playerIndex)])
+	
 func _physics_process(delta):
-
 	if isRewinding:
 		return
 	#increment counters
-	lifeTime -= delta;
+	lifeTime -= delta
 	onair_time += delta
 	shoot_time += delta
+
+	if lifeTime <= 0:
+		TimeController.rewindTime()
 
 	### MOVEMENT ###
 
@@ -122,3 +126,8 @@ func loadAndPlayAnim(new_anim, delta = null):
 	
 func stopAnim():
 	$anim.stop(false)
+
+func hitByBullet():
+	lifeTime -= 5
+	if(lifeTime < 0):
+		lifeTime = 0

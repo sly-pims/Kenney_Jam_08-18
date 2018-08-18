@@ -357,7 +357,7 @@ tracks/2/keys = {
 "values": [ Vector2( 34.8428, 22.361 ), Vector2( 38.717, 16.9371 ) ]
 }
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -398,7 +398,7 @@ area_mask = 1
 position = Vector2( 0, -15 )
 frames = ExtResource( 4 )
 animation = "default"
-frame = 5
+frame = 9
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="smoke" type="Node2D" parent="sprite" index="0"]
@@ -408,14 +408,13 @@ rotation = -1.45648
 
 [node name="gun" type="Sprite" parent="sprite" index="1"]
 
-position = Vector2( 39.1044, 12.6755 )
-rotation = 0.349278
+position = Vector2( 34.8428, 22.361 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="bullet_shoot" type="Position2D" parent="sprite/gun" index="0"]
 
-position = Vector2( 18.0938, -0.36005 )
+position = Vector2( 17.7064, -3.07201 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="anim" type="AnimationPlayer" parent="." index="4"]

@@ -1,8 +1,8 @@
 extends Node
 
 # How many frames to rewind by
-const rewindTime = 60 * 3
-const rewindSpeed = 1
+const rewindTime = 60 * 5
+const rewindSpeed = 2
 
 var Frame = load('res://script/frame.gd')
 var PlayerFrame = load('res://script/playerFrame.gd')
@@ -15,6 +15,8 @@ onready var player0 = get_node("../player0")
 onready var player1 = get_node("../player1")
 
 onready var players = [player0, player1]
+
+onready var timer = get_node('timer')
 
 var playerCount = 2
 
@@ -29,6 +31,7 @@ func _process(delta):
 		frames.push_front(currentFrame)
 		
 	elif rewindFramesLeft > 0 && isRewinding:
+		print(rewindFramesLeft)
 		# Scrub frames
 		var elapsedDelta = popFramesAndGetDelta(rewindSpeed - 1)
 		
@@ -98,10 +101,14 @@ func stopPlayerAnim():
 		players[i].stopAnim()
 		
 func rewindTime():
+	setPlayersRewinding(true)
+	timer.start()
+
+func _rewindTime():
 	isRewinding = true
 	rewindFramesLeft = rewindTime
-	setPlayersRewinding(true)
-	
+	timer.stop()
+
 func resumeTime():
 	isRewinding = false
 	setPlayersRewinding(false)

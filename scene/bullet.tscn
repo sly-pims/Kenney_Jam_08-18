@@ -3,9 +3,6 @@
 [ext_resource path="res://script/bullet.gd" type="Script" id=1]
 [ext_resource path="res://asset/sprite/bullet.png" type="Texture" id=2]
 
-
-
-
 [sub_resource type="CanvasItemMaterial" id=1]
 
 render_priority = 0
@@ -112,17 +109,17 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="bullet" type="RigidBody2D" index="0"]
+[node name="bullet" type="RigidBody2D"]
 
 material = SubResource( 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 1.42857e-006
+mass = 0.2
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 2
 contacts_reported = 1

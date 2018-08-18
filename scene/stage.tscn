@@ -10,7 +10,7 @@
 [ext_resource path="res://asset/sound/music.ogg" type="AudioStream" id=8]
 [ext_resource path="res://script/timeController.gd" type="Script" id=9]
 
-[node name="stage" type="Node" index="0"]
+[node name="stage" type="Node"]
 
 [node name="tile_map" type="TileMap" parent="." index="0"]
 
@@ -389,6 +389,13 @@ bus = "Master"
 
 script = ExtResource( 9 )
 
+[node name="timer" type="Timer" parent="timeController" index="0"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+
 [node name="Camera2D" type="Camera2D" parent="." index="10"]
 
 position = Vector2( 998.427, 842.773 )
@@ -414,5 +421,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[connection signal="timeout" from="timeController/timer" to="timeController" method="_rewindTime"]
 
 
