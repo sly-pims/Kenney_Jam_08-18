@@ -10,7 +10,7 @@
 [ext_resource path="res://asset/sound/music.ogg" type="AudioStream" id=8]
 [ext_resource path="res://script/timeController.gd" type="Script" id=9]
 
-[node name="stage" type="Node"]
+[node name="stage" type="Node" index="0"]
 
 [node name="tile_map" type="TileMap" parent="." index="0"]
 
@@ -293,11 +293,15 @@ position = Vector2( 3200.29, 1237.8 )
 
 position = Vector2( 1039.29, 409.746 )
 
-[node name="player" parent="." index="3" instance=ExtResource( 5 )]
+[node name="player0" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 251.684, 1045.6 )
 
-[node name="enemies" type="Node" parent="." index="4"]
+[node name="player1" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 400.684, 1048.6 )
+
+[node name="enemies" type="Node" parent="." index="5"]
 
 editor/display_folded = true
 
@@ -345,11 +349,12 @@ position = Vector2( 3546.2, 1356.19 )
 
 position = Vector2( 2215.3, 1429.39 )
 
-[node name="parallax_bg" parent="." index="5" instance=ExtResource( 7 )]
+[node name="parallax_bg" parent="." index="6" instance=ExtResource( 7 )]
 
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scale = Vector2( 3, 3 )
+transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 
-[node name="Label" type="Label" parent="." index="6"]
+[node name="Label" type="Label" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -371,7 +376,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="music" type="AudioStreamPlayer" parent="." index="7"]
+[node name="music" type="AudioStreamPlayer" parent="." index="8"]
 
 stream = ExtResource( 8 )
 volume_db = 0.0
@@ -380,8 +385,34 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="timeController" type="Node" parent="." index="8"]
+[node name="timeController" type="Node" parent="." index="9"]
 
 script = ExtResource( 9 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="10"]
+
+position = Vector2( 998.427, 842.773 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
 
 
