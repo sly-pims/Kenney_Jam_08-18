@@ -17,8 +17,8 @@ target_fps="60"
 
 [display]
 
-window/size/width=800
-window/size/height=480
+window/size/width=2020
+window/size/height=800
 window/stretch/mode="2d"
 stretch/aspect="keep_height"
 stretch/mode="2d"

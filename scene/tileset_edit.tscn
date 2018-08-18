@@ -2,17 +2,17 @@
 
 [ext_resource path="res://asset/sprite/tiles_demo.png" type="Texture" id=1]
 
-
-
 [node name="Node" type="Node"]
 
-[node name="floor" type="Sprite" parent="."]
+[node name="floor" type="Sprite" parent="." index="0"]
 
+position = Vector2( 0.601532, 1.17592 )
+scale = Vector2( 1.0188, 1.03675 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 
-[node name="collision" type="StaticBody2D" parent="floor"]
+[node name="collision" type="StaticBody2D" parent="floor" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -22,19 +22,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( 32, -24, 32, 32, -32, 32, -32, -24 )
 
-[node name="edge" type="Sprite" parent="."]
+[node name="edge" type="Sprite" parent="." index="1"]
 
 position = Vector2( 64, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 0, 64, 64 )
 
-[node name="collision" type="StaticBody2D" parent="edge"]
+[node name="collision" type="StaticBody2D" parent="edge" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -44,19 +44,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="edge/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="edge/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -32, -24, 24, -24, 24, 32, -32, 32 )
 
-[node name="wall" type="Sprite" parent="."]
+[node name="wall" type="Sprite" parent="." index="2"]
 
 position = Vector2( 64, 64 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 64, 64, 64 )
 
-[node name="collision" type="StaticBody2D" parent="wall"]
+[node name="collision" type="StaticBody2D" parent="wall" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -66,19 +66,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -32, -32, 24, -32, 24, 32, -32, 32 )
 
-[node name="wall_deco" type="Sprite" parent="."]
+[node name="wall_deco" type="Sprite" parent="." index="3"]
 
 position = Vector2( 96, 128 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 320, 128, 128, 64 )
 
-[node name="collision" type="StaticBody2D" parent="wall_deco"]
+[node name="collision" type="StaticBody2D" parent="wall_deco" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -88,19 +88,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall_deco/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall_deco/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -64, -32, -8, -32, -8, 32, -64, 32 )
 
-[node name="corner" type="Sprite" parent="."]
+[node name="corner" type="Sprite" parent="." index="4"]
 
 position = Vector2( 64, 192 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 128, 64, 64 )
 
-[node name="collision" type="StaticBody2D" parent="corner"]
+[node name="collision" type="StaticBody2D" parent="corner" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -110,19 +110,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="corner/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="corner/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -32, -32, 24, -32, 32, -24, 32, 32, -32, 32 )
 
-[node name="flowers" type="Sprite" parent="."]
+[node name="flowers" type="Sprite" parent="." index="5"]
 
 position = Vector2( 128, 192 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 192, 192, 64, 64 )
 
-[node name="collision" type="StaticBody2D" parent="flowers"]
+[node name="collision" type="StaticBody2D" parent="flowers" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -132,19 +132,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="flowers/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="flowers/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -32, 32, 32, 32, 32, -24, -32, -24 )
 
-[node name="tree_base" type="Sprite" parent="."]
+[node name="tree_base" type="Sprite" parent="." index="6"]
 
 position = Vector2( 192, 192 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 256, 192, 64, 64 )
 
-[node name="collision" type="StaticBody2D" parent="tree_base"]
+[node name="collision" type="StaticBody2D" parent="tree_base" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -154,47 +154,47 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tree_base/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tree_base/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -32, 32, 32, 32, 32, -24, -32, -24 )
 
-[node name="tree_mid" type="Sprite" parent="."]
+[node name="tree_mid" type="Sprite" parent="." index="7"]
 
 position = Vector2( 192, 128 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 256, 128, 64, 64 )
 
-[node name="tree_mid 2" type="Sprite" parent="."]
+[node name="tree_mid 2" type="Sprite" parent="." index="8"]
 
 position = Vector2( 192, 64 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 256, 64, 64, 64 )
 
-[node name="tree_top" type="Sprite" parent="."]
+[node name="tree_top" type="Sprite" parent="." index="9"]
 
 position = Vector2( 192, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 256, 0, 64, 64 )
 
-[node name="solid" type="Sprite" parent="."]
+[node name="solid" type="Sprite" parent="." index="10"]
 
 position = Vector2( 0, 64 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 64, 64, 64 )
 
-[node name="ceiling" type="Sprite" parent="."]
+[node name="ceiling" type="Sprite" parent="." index="11"]
 
 position = Vector2( 0, 128 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 384, 64, 64, 64 )
 
-[node name="collision" type="StaticBody2D" parent="ceiling"]
+[node name="collision" type="StaticBody2D" parent="ceiling" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -204,19 +204,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ceiling/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ceiling/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
-[node name="ramp" type="Sprite" parent="."]
+[node name="ramp" type="Sprite" parent="." index="12"]
 
 position = Vector2( 256, 224 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 128, 128, 64, 128 )
 
-[node name="collision" type="StaticBody2D" parent="ramp"]
+[node name="collision" type="StaticBody2D" parent="ramp" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -226,19 +226,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ramp/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ramp/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -32, -56, 32, 8, 32, 64, -32, 64 )
 
-[node name="ceiling2wall" type="Sprite" parent="."]
+[node name="ceiling2wall" type="Sprite" parent="." index="13"]
 
 position = Vector2( 0, 192 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 448, 64, 64, 64 )
 
-[node name="collision" type="StaticBody2D" parent="ceiling2wall"]
+[node name="collision" type="StaticBody2D" parent="ceiling2wall" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -248,19 +248,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ceiling2wall/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ceiling2wall/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -32, -32, 24, -32, 24, 32, -32, 32 )
 
-[node name="platform_floor" type="Sprite" parent="."]
+[node name="platform_floor" type="Sprite" parent="." index="14"]
 
 position = Vector2( 0, 256 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 128, 0, 64, 64 )
 
-[node name="collision" type="StaticBody2D" parent="platform_floor"]
+[node name="collision" type="StaticBody2D" parent="platform_floor" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -270,19 +270,19 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform_floor/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform_floor/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( 32, -24, 32, 24, -32, 24, -32, -24 )
 
-[node name="platform_edge" type="Sprite" parent="."]
+[node name="platform_edge" type="Sprite" parent="." index="15"]
 
 position = Vector2( 64, 256 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 192, 0, 64, 64 )
 
-[node name="collision" type="StaticBody2D" parent="platform_edge"]
+[node name="collision" type="StaticBody2D" parent="platform_edge" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -292,12 +292,12 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform_edge/collision"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform_edge/collision" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( 24, -24, 24, 24, -32, 24, -32, -24 )
 
-[node name="help" type="Label" parent="."]
+[node name="help" type="Label" parent="." index="16"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -310,6 +310,7 @@ margin_bottom = 422.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
+mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 0
 text = "This scene serves as a tool for editing the tileset.
