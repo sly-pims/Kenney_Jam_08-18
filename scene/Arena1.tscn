@@ -14,7 +14,7 @@
 [ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/signLeft.png" type="Texture" id=12]
 [ext_resource path="res://scene/player.tscn" type="PackedScene" id=13]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
