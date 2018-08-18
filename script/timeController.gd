@@ -13,19 +13,21 @@ var frames = []
 
 onready var player0 = get_node("../player0")
 onready var player1 = get_node("../player1")
+onready var player2 = get_node("../player2")
+onready var player3 = get_node("../player3")
 
-onready var players = [player0, player1]
+onready var players = [player0, player1, player2, player3]
 
 onready var timer = get_node('timer')
 
-var playerCount = 2
+var playerCount = 4
 
 onready var vhsShader = get_node('../Camera2D/vhsShader')
 
 func _process(delta):
 	if rewindFramesLeft <= 0 && !isRewinding:
 		var playerFrames = []
-		for i in range(2):
+		for i in range(playerCount):
 			playerFrames.push_back(getPlayerInfo(i))
 		
 		var currentFrame = Frame.new(delta, playerFrames)
@@ -54,24 +56,31 @@ func _process(delta):
 
 		# Reset the players position, lifetime and velocity
 		for i in range(playerCount):
-			setPlayerInfo(i, previousFrame.getPlayerFrame(i), elapsedDelta)
+			var previousPlayerFrame = previousFrame.getPlayerFrame(i)
+			if previousPlayerFrame:
+				setPlayerInfo(i, previousPlayerFrame, elapsedDelta)
 		
 		# Decrement the rewind frames
 		rewindFramesLeft -= rewindSpeed
 		
 		if rewindFramesLeft <= 0:
 			for i in range(playerCount):
-				setPlayerVelocity(i, previousFrame.getPlayerFrame(i))
+				var previousPlayerFrame = previousFrame.getPlayerFrame(i)
+				if previousPlayerFrame:
+					setPlayerVelocity(i, previousFrame.getPlayerFrame(i))
 	else:
 		stopPlayerAnim()
 
 func getPlayerInfo(playerIndex):
-	return PlayerFrame.new(
-		 players[playerIndex].position,
-		 players[playerIndex].linear_vel,
-		 players[playerIndex].lifeTime,
-		 players[playerIndex].anim,
-		 players[playerIndex].sprite.scale.x)
+	if isPlayerInstanceValid(players[playerIndex]):
+		return PlayerFrame.new(
+			players[playerIndex].position,
+			players[playerIndex].linear_vel,
+			players[playerIndex].lifeTime,
+			players[playerIndex].anim,
+			players[playerIndex].sprite.scale.x)
+	else:
+		return null
 
 func setPlayerInfo(playerIndex, playerFrame, elapsedDelta):
 	# Set old position to the player
@@ -121,4 +130,8 @@ func _input(event):
 		rewindTime()
 	if event is InputEventKey and event.scancode == KEY_L and not event.echo:
 		resumeTime()
+		
+func isPlayerInstanceValid(player):
+	var wr = weakref(player)
+	return wr.get_ref()
 	

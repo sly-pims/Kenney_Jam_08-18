@@ -11,7 +11,9 @@ const BULLET_VELOCITY = 1000
 const SHOOT_TIME_SHOW_WEAPON = 0.2
 const BEIGE_FRAMES = preload('res://asset/sprite/alienBeige.sprites/spriteFrames.tres')
 const BLUE_FRAMES = preload('res://asset/sprite/alienBlue.sprites/spriteFrames.tres')
-const FRAMES = [BEIGE_FRAMES, BLUE_FRAMES]
+const GREEN_FRAMES = preload('res://asset/sprite/alienGreen.sprites/spriteFrames.tres')
+const PINK_FRAMES = preload('res://asset/sprite/alienPink.sprites/spriteFrames.tres')
+const FRAMES = [BEIGE_FRAMES, BLUE_FRAMES, GREEN_FRAMES, PINK_FRAMES]
 
 onready var SPRITE_SCALE = $sprite.scale.x
 onready var TimeController = get_node('../timeController')
@@ -31,6 +33,14 @@ onready var sprite = $sprite
 func _ready():
 	playerIndex = self.name[self.name.length() - 1]
 	$sprite.set_sprite_frames(FRAMES[int(playerIndex)])
+	print(Input.get_connected_joypads())
+	var controllerConnected = false
+	for i in Input.get_connected_joypads():
+		if i == int(playerIndex):
+			controllerConnected = true
+			break
+	if !controllerConnected:
+		queue_free()
 	
 func _physics_process(delta):
 	if isRewinding:

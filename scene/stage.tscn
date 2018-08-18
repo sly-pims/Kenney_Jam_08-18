@@ -378,7 +378,15 @@ position = Vector2( 251.684, 1045.6 )
 
 position = Vector2( 400.684, 1048.6 )
 
-[node name="enemies" type="Node" parent="." index="5"]
+[node name="player2" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 902.685, 1303.6 )
+
+[node name="player3" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 568.684, 1251.6 )
+
+[node name="enemies" type="Node" parent="." index="7"]
 
 editor/display_folded = true
 
@@ -426,12 +434,12 @@ position = Vector2( 3546.2, 1356.19 )
 
 position = Vector2( 2215.3, 1429.39 )
 
-[node name="parallax_bg" parent="." index="6" instance=ExtResource( 7 )]
+[node name="parallax_bg" parent="." index="8" instance=ExtResource( 7 )]
 
 scale = Vector2( 3, 3 )
 transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 
-[node name="Label" type="Label" parent="." index="7"]
+[node name="Label" type="Label" parent="." index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -453,7 +461,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="music" type="AudioStreamPlayer" parent="." index="8"]
+[node name="music" type="AudioStreamPlayer" parent="." index="10"]
 
 stream = ExtResource( 8 )
 volume_db = 0.0
@@ -462,7 +470,7 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="timeController" type="Node" parent="." index="9"]
+[node name="timeController" type="Node" parent="." index="11"]
 
 editor/display_folded = true
 script = ExtResource( 9 )
@@ -474,7 +482,7 @@ wait_time = 0.5
 one_shot = false
 autostart = false
 
-[node name="Camera2D" type="Camera2D" parent="." index="10"]
+[node name="Camera2D" type="Camera2D" parent="." index="12"]
 
 position = Vector2( 531.784, 1154.64 )
 anchor_mode = 1
