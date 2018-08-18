@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/alienBeige.tpsheet-75d72307a85b1c87f610c847007ca168.res"
+
+[deps]
+
+files=[ "res://asset/sprite/alienBeige.sprites/alienBeige_swim2.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_swim1.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_walk2.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_climb1.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_climb2.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_walk1.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_jump.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_hurt.tres", "res://asset/sprite/alienBeige.sprites/alienBeige.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_stand.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_duck.tres" ]
+
+source_file="res://asset/sprite/alienBeige.tpsheet"
+dest_files=[ "res://.import/alienBeige.tpsheet-75d72307a85b1c87f610c847007ca168.res", "res://asset/sprite/alienBeige.sprites/alienBeige_swim2.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_swim1.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_walk2.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_climb1.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_climb2.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_walk1.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_jump.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_hurt.tres", "res://asset/sprite/alienBeige.sprites/alienBeige.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_stand.tres", "res://asset/sprite/alienBeige.sprites/alienBeige_duck.tres" ]
+
+[params]
+

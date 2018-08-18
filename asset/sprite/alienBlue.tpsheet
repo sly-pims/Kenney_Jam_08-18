@@ -1,0 +1,183 @@
+{
+	"textures": [
+		{
+			"image": "alienBlue.png",
+			"size": {
+				"w": 758,
+				"h": 99
+			},
+			"sprites": [
+				{
+					"filename": "alienBlue_swim2.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 70,
+						"h": 97
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "alienBlue_walk2.png",
+					"region": {
+						"x": 73,
+						"y": 1,
+						"w": 67,
+						"h": 96
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "alienBlue_swim1.png",
+					"region": {
+						"x": 142,
+						"y": 1,
+						"w": 69,
+						"h": 95
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "alienBlue_jump.png",
+					"region": {
+						"x": 213,
+						"y": 1,
+						"w": 66,
+						"h": 93
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "alienBlue_walk1.png",
+					"region": {
+						"x": 281,
+						"y": 1,
+						"w": 66,
+						"h": 93
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "alienBlue_hurt.png",
+					"region": {
+						"x": 349,
+						"y": 1,
+						"w": 67,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "alienBlue.png",
+					"region": {
+						"x": 418,
+						"y": 1,
+						"w": 66,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "alienBlue_climb1.png",
+					"region": {
+						"x": 486,
+						"y": 1,
+						"w": 66,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "alienBlue_climb2.png",
+					"region": {
+						"x": 554,
+						"y": 1,
+						"w": 66,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "alienBlue_stand.png",
+					"region": {
+						"x": 622,
+						"y": 1,
+						"w": 66,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "alienBlue_duck.png",
+					"region": {
+						"x": 690,
+						"y": 1,
+						"w": 67,
+						"h": 72
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:266afb4fa03c18559cde624552e9f731:cda24099e670bc00706464bfe46e4bc6:e09a4d777010bbe538cc3f47c038d791$"
+	}
+}
