@@ -1,0 +1,288 @@
+{
+	"textures": [
+		{
+			"image": "PlanetSet.png",
+			"size": {
+				"w": 390,
+				"h": 727
+			},
+			"sprites": [
+				{
+					"filename": "planetHalf.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "planetHalf_left.png",
+					"region": {
+						"x": 131,
+						"y": 1,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "planetHalf_mid.png",
+					"region": {
+						"x": 261,
+						"y": 1,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "planetHalf_right.png",
+					"region": {
+						"x": 1,
+						"y": 78,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "planet.png",
+					"region": {
+						"x": 131,
+						"y": 78,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetCenter.png",
+					"region": {
+						"x": 261,
+						"y": 78,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetCenter_rounded.png",
+					"region": {
+						"x": 1,
+						"y": 155,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetCliffAlt_left.png",
+					"region": {
+						"x": 131,
+						"y": 208,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetCliffAlt_right.png",
+					"region": {
+						"x": 261,
+						"y": 208,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetCliff_left.png",
+					"region": {
+						"x": 1,
+						"y": 285,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetCliff_right.png",
+					"region": {
+						"x": 131,
+						"y": 338,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetCorner_left.png",
+					"region": {
+						"x": 261,
+						"y": 338,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetCorner_right.png",
+					"region": {
+						"x": 1,
+						"y": 415,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetHill_left.png",
+					"region": {
+						"x": 131,
+						"y": 468,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetHill_right.png",
+					"region": {
+						"x": 261,
+						"y": 468,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetLeft.png",
+					"region": {
+						"x": 1,
+						"y": 545,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetMid.png",
+					"region": {
+						"x": 131,
+						"y": 598,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "planetRight.png",
+					"region": {
+						"x": 261,
+						"y": 598,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b3c95f13d4598a32f49aebf1d410351f:984069b213cf1e4d16339b1e4026ca27:5f9976d2e2d756d496b8360d09799eb2$"
+	}
+}

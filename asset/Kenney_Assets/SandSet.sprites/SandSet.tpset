@@ -1,0 +1,288 @@
+{
+	"textures": [
+		{
+			"image": "SandSet.png",
+			"size": {
+				"w": 390,
+				"h": 727
+			},
+			"sprites": [
+				{
+					"filename": "sandHalf.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "sandHalf_left.png",
+					"region": {
+						"x": 131,
+						"y": 1,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "sandHalf_mid.png",
+					"region": {
+						"x": 261,
+						"y": 1,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "sandHalf_right.png",
+					"region": {
+						"x": 1,
+						"y": 78,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "sand.png",
+					"region": {
+						"x": 131,
+						"y": 78,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandCenter.png",
+					"region": {
+						"x": 261,
+						"y": 78,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandCenter_rounded.png",
+					"region": {
+						"x": 1,
+						"y": 155,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandCliffAlt_left.png",
+					"region": {
+						"x": 131,
+						"y": 208,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandCliffAlt_right.png",
+					"region": {
+						"x": 261,
+						"y": 208,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandCliff_left.png",
+					"region": {
+						"x": 1,
+						"y": 285,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandCliff_right.png",
+					"region": {
+						"x": 131,
+						"y": 338,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandCorner_leftg.png",
+					"region": {
+						"x": 261,
+						"y": 338,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandCorner_right.png",
+					"region": {
+						"x": 1,
+						"y": 415,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandHill_left.png",
+					"region": {
+						"x": 131,
+						"y": 468,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandHill_right.png",
+					"region": {
+						"x": 261,
+						"y": 468,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandLeft.png",
+					"region": {
+						"x": 1,
+						"y": 545,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandMid.png",
+					"region": {
+						"x": 131,
+						"y": 598,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "sandRight.png",
+					"region": {
+						"x": 261,
+						"y": 598,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:f51419f8887142aa218dffb72b7e3552:1edaef75202e5fe2be15dca7a08f1c52:25c84e8eff51cf010cfa84d841e0ac19$"
+	}
+}

@@ -1,0 +1,483 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://asset/Kenney_Assets/DirtSet.sprites/DirtSet.res" type="TileSet" id=1]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/cactus.png" type="Texture" id=2]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/bush.png" type="Texture" id=3]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/signRight.png" type="Texture" id=4]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/lava.png" type="Texture" id=5]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/lavaTop_high.png" type="Texture" id=6]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/boxExplosive.png" type="Texture" id=7]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/boxExplosive_used.png" type="Texture" id=8]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/boxCrate.png" type="Texture" id=9]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/boxCrate_double.png" type="Texture" id=10]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/signExit.png" type="Texture" id=11]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Tiles/signLeft.png" type="Texture" id=12]
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=13]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+scale = Vector2( 0.47, 0.47 )
+mode = 2
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = true
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 4160, 5, 0, 8392768, 5, 0, 16780608, 2, 0, 16780736, 2, 0, 16780864, 2, 0, 16780992, 2, 0, 16781120, 2, 0, 16781248, 2, 0, 16781376, 5, 0, 20909064, 13, 0, 24969222, 16, 0, 24969350, 16, 0, 24969478, 16, 0, 24969606, 16, 0, 24969734, 16, 0, 24969862, 16, 0, 25103306, 14, 0, 25103369, 16, 0, 25103497, 8, 0, 25168320, 14, 0, 25168448, 5, 0, 25168512, 5, 0, 25169984, 5, 0, 33556801, 14, 0, 33556929, 12, 0, 33556992, 5, 0, 33558592, 5, 0, 39389907, 5, 0, 41945282, 14, 0, 41945409, 12, 0, 41945507, 5, 0, 41945600, 5, 0, 41947200, 5, 0, 43518740, 5, 0, 43584276, 5, 0, 46137729, 0, 0, 47778707, 5, 0, 47844243, 5, 0, 50331648, 13, 0, 50332287, 14, 0, 50332415, 5, 0, 50332543, 5, 0, 50332671, 5, 0, 50333184, 5, 0, 50333312, 5, 0, 50333440, 5, 0, 50333568, 5, 0, 50333696, 5, 0, 50333824, 5, 0, 50333952, 5, 0, 50334080, 5, 0, 50334208, 5, 0, 50335808, 5, 0, 50398335, 5, 0, 50463872, 5, 0, 52038675, 13, 0, 57147413, 14, 0, 58720256, 11, 0, 58720384, 13, 0, 58721024, 5, 0, 58721152, 5, 0, 58721280, 5, 0, 58721408, 5, 0, 58721792, 5, 0, 58721920, 5, 0, 58722048, 5, 0, 58722176, 5, 0, 58722304, 5, 0, 58722432, 5, 0, 58722560, 5, 0, 58722688, 5, 0, 58722816, 5, 0, 58724416, 5, 0, 61214250, 5, 0, 65474027, 5, 0, 67108864, 5, 0, 67110017, 5, 0, 67110145, 13, 0, 69668267, 5, 0, 71304321, 5, 0, 71304385, 11, 0, 71304513, 13, 0, 73862506, 5, 0, 75497472, 5, 0, 79495571, 0, 0, 79693248, 2, 0, 79693376, 2, 0, 83886080, 5, 0, 92274688, 5, 0, 92278719, 14, 0, 92278847, 5, 0, 100663296, 5, 0, 100663361, 5, 0, 100663488, 5, 0, 100663616, 5, 0, 100663744, 5, 0, 100663872, 5, 0, 100664000, 5, 0, 100664128, 5, 0, 100664256, 5, 0, 100664384, 5, 0, 100664512, 5, 0, 100664640, 5, 0, 100664768, 5, 0, 100664896, 5, 0, 100665024, 5, 0, 100665152, 5, 0, 100665280, 5, 0, 100665408, 5, 0, 100665536, 5, 0, 100665664, 5, 0, 100665792, 5, 0, 100665920, 5, 0, 100666048, 5, 0, 100666176, 5, 0, 100666304, 5, 0, 100666432, 5, 0, 100666560, 5, 0, 100666687, 5, 0, 100666815, 5, 0, 100666943, 5, 0, 100667071, 5, 0, 100667199, 5, 0, 100667327, 5, 0, 100667455, 5, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cactus" type="Sprite" parent="TileMap" index="0"]
+
+position = Vector2( 111, 318 )
+texture = ExtResource( 2 )
+
+[node name="bush" type="Sprite" parent="TileMap" index="1"]
+
+position = Vector2( 634, 319 )
+texture = ExtResource( 3 )
+
+[node name="signRight" type="Sprite" parent="TileMap" index="2"]
+
+position = Vector2( 746.506, 338.973 )
+rotation = 0.523599
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="lava" type="Sprite" parent="TileMap" index="3"]
+
+position = Vector2( 1344, 960 )
+texture = ExtResource( 5 )
+
+[node name="lava3" type="Sprite" parent="TileMap" index="4"]
+
+position = Vector2( 1344, 952 )
+texture = ExtResource( 5 )
+
+[node name="lava2" type="Sprite" parent="TileMap" index="5"]
+
+position = Vector2( 1472.5, 960 )
+scale = Vector2( 1.00781, 1 )
+texture = ExtResource( 5 )
+
+[node name="lava4" type="Sprite" parent="TileMap" index="6"]
+
+position = Vector2( 1472, 951 )
+scale = Vector2( 1.00781, 1 )
+texture = ExtResource( 5 )
+
+[node name="lavaTop_high" type="Sprite" parent="TileMap" index="7"]
+
+position = Vector2( 1344, 824 )
+texture = ExtResource( 6 )
+
+[node name="lavaTop_high2" type="Sprite" parent="TileMap" index="8"]
+
+position = Vector2( 1472, 823 )
+texture = ExtResource( 6 )
+
+[node name="boxExplosive" type="Sprite" parent="TileMap" index="9"]
+
+position = Vector2( 3965, 194 )
+texture = ExtResource( 7 )
+
+[node name="boxExplosive_used" type="Sprite" parent="TileMap" index="10"]
+
+position = Vector2( 3838, 194 )
+texture = ExtResource( 8 )
+
+[node name="boxExplosive2" type="Sprite" parent="TileMap" index="11"]
+
+position = Vector2( 3523, 195 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="boxCrate" type="Sprite" parent="TileMap" index="12"]
+
+position = Vector2( 1175, 706 )
+texture = ExtResource( 9 )
+
+[node name="boxCrate_double" type="Sprite" parent="TileMap" index="13"]
+
+position = Vector2( 1237, 578 )
+texture = ExtResource( 10 )
+
+[node name="signExit" type="Sprite" parent="TileMap" index="14"]
+
+position = Vector2( 4223, 1344 )
+texture = ExtResource( 11 )
+
+[node name="signLeft" type="Sprite" parent="TileMap" index="15"]
+
+position = Vector2( 833, 705 )
+texture = ExtResource( 12 )
+
+[node name="TopLeft" type="RigidBody2D" parent="TileMap" index="16"]
+
+editor/display_folded = true
+position = Vector2( 410, 42.5 )
+scale = Vector2( 1.07692, 0.961538 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/TopLeft" index="0"]
+
+position = Vector2( -407.643, -17.16 )
+scale = Vector2( 0.997565, 0.984256 )
+build_mode = 0
+polygon = PoolVector2Array( 32.9358, 381.693, 736.016, 381.693, 736.016, 509.838, 34.9163, 509.838 )
+
+[node name="Floor" type="RigidBody2D" parent="TileMap" index="17"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Floor" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 128, 1024, 256, 1024, 148.936, 917.021, 148.936, 872.34, 127.66, 893.617, 0, 767, 0, 1664, 4288, 1664, 4288, 1408, 4159, 1408, 4031, 1536, 764, 1536, 764, 1407, 637, 1407, 637, 1536, 128, 1536 )
+
+[node name="boxCrate" type="Sprite" parent="TileMap/Floor" index="1"]
+
+position = Vector2( 700, 1472.34 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LeftMidPlatform" type="RigidBody2D" parent="TileMap" index="18"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/LeftMidPlatform" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 389.362, 774.468, 508.511, 774.468, 508.511, 706.383, 389.362, 706.383 )
+
+[node name="TopRight" type="RigidBody2D" parent="TileMap" index="19"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/TopRight" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 4288, 1024, 4288, 0, 4160, 0, 4160, 256, 4030, 256, 4031, 255, 3901, 256, 3770, 256, 3588, 256, 3588, 130, 3458, 130, 3458, 256, 3392, 256, 3392, 330, 4160, 330, 4160, 1024 )
+
+[node name="RightMidPlatform" type="RigidBody2D" parent="TileMap" index="20"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/RightMidPlatform" index="0"]
+
+position = Vector2( 72.3404, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 2946, 511, 3138, 512, 3264, 428, 3264, 383, 3072, 383, 3009, 320, 3008, 320, 3008, 449 )
+
+[node name="LeftStairs" type="RigidBody2D" parent="TileMap" index="21"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/LeftStairs" index="0"]
+
+position = Vector2( -44.6809, 25.5319 )
+build_mode = 0
+polygon = PoolVector2Array( 2816, 576, 2944, 576, 2944, 640, 3008, 640, 3008, 704, 3135, 704, 3135, 768, 3263.83, 895.745, 3197.87, 895.745, 3136.17, 895.745, 3136, 832, 3008, 832, 3008, 768, 2880, 768, 2880, 704, 2816, 704 )
+
+[node name="RightMidFloor" type="RigidBody2D" parent="TileMap" index="22"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/RightMidFloor" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 2816, 512, 2816, 384, 2623, 383, 2238, 768, 1536, 768, 1537, 1024, 2688, 1024, 2688, 512 )
+
+[node name="LeftMidFloor" type="RigidBody2D" parent="TileMap" index="23"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/LeftMidFloor" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 1728, 1289, 1728, 1217, 1473, 1216, 1282, 1025, 1280.85, 770.213, 1234.04, 770.213, 1234.04, 644.681, 1297.87, 644.681, 1297.87, 517.021, 1174.47, 517.021, 1174.47, 644.681, 1110.64, 644.681, 1110, 768, 767, 768, 639, 896, 768, 896, 768, 1024, 1154, 1024, 1153, 1216, 1472, 1217, 1473, 1289 )
+
+[node name="RightStairs" type="RigidBody2D" parent="TileMap" index="24"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/RightStairs" index="0"]
+
+position = Vector2( 42.5532, 38.2979 )
+build_mode = 0
+polygon = PoolVector2Array( 3392, 1216, 3520, 1216, 3520, 1152, 3584, 1152, 3584, 1088, 3648, 1088, 3648, 1024, 3712, 1024, 3712, 896, 3584, 896, 3584, 960, 3520, 960, 3520, 1024, 3456, 1024, 3456, 1088, 3392, 1088 )
+
+[node name="BottomRightCrates" type="RigidBody2D" parent="TileMap" index="25"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/BottomRightCrates" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 3200, 1410, 3119.15, 1408.51, 3117.02, 1310.64, 3023.4, 1310.64, 3021.28, 1406.38, 3090, 1409, 3160, 1420, 3200, 1420 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="TileMap" index="26"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/RigidBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 408.511, 1217.02, 408.511, 1280.85, 525.532, 1280.85, 525.532, 1217.02 )
+
+[node name="boxCrate2" type="Sprite" parent="TileMap" index="27"]
+
+position = Vector2( 3135, 1473 )
+texture = ExtResource( 9 )
+
+[node name="boxCrate_double2" type="Sprite" parent="TileMap" index="28"]
+
+position = Vector2( 3072.34, 1357.45 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="player" parent="." index="1" instance=ExtResource( 13 )]
+
+position = Vector2( 150, 150 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LeftWall" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftWall" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 370, -10, 370, -9, -59, 0, -59 )
+
+[node name="TopWall" type="StaticBody2D" parent="." index="3"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopWall" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 2030, -20, 2030, -30, 0, -29, 0, -20, 2020, -20, 2020, 0, 2030, 0 )
+
+

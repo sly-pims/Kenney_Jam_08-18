@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://asset/fonts/BlockFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://asset/fonts/HighSquaresFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://asset/sprite/icon.png" type="Texture" id=3]
+[ext_resource path="res://asset/sprite/bullet.png" type="Texture" id=4]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Enemies/barnacle.png" type="Texture" id=5]
+
+[node name="Container" type="Container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 550.0
+margin_top = 41.0
+margin_right = 1553.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "THIS IS A TITLE TEST"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 924.0
+margin_top = 234.0
+margin_right = 1113.0
+margin_bottom = 292.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "NEW GAME"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
+position = Vector2( 245.5, 484 )
+scale = Vector2( 5.76563, 5.84375 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+
+position = Vector2( 509, 459.5 )
+scale = Vector2( 7.5, 7.5625 )
+texture = ExtResource( 4 )
+
+[node name="Sprite9" type="Sprite" parent="." index="4"]
+
+position = Vector2( 1710, 460 )
+scale = Vector2( 7.5, 7.5625 )
+texture = ExtResource( 4 )
+
+[node name="Sprite10" type="Sprite" parent="." index="5"]
+
+position = Vector2( 1490, 591 )
+scale = Vector2( 7.5, 7.5625 )
+texture = ExtResource( 4 )
+
+[node name="Sprite11" type="Sprite" parent="." index="6"]
+
+position = Vector2( 1350, 460 )
+scale = Vector2( 7.5, 7.5625 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="." index="7"]
+
+position = Vector2( 1210, 591 )
+scale = Vector2( 7.5, 7.5625 )
+texture = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="." index="8"]
+
+position = Vector2( 930, 600 )
+scale = Vector2( 7.5, 7.5625 )
+texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="." index="9"]
+
+position = Vector2( 1070, 461 )
+scale = Vector2( 7.5, 7.5625 )
+texture = ExtResource( 4 )
+
+[node name="Sprite6" type="Sprite" parent="." index="10"]
+
+position = Vector2( 790, 460 )
+scale = Vector2( 7.5, 7.5625 )
+texture = ExtResource( 4 )
+
+[node name="Sprite7" type="Sprite" parent="." index="11"]
+
+position = Vector2( 650, 601 )
+scale = Vector2( 7.5, 7.5625 )
+texture = ExtResource( 4 )
+
+[node name="Sprite8" type="Sprite" parent="." index="12"]
+
+position = Vector2( 1785, 624 )
+scale = Vector2( 2.57031, 2.44531 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+

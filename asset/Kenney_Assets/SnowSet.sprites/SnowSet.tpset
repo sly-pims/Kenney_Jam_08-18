@@ -1,0 +1,288 @@
+{
+	"textures": [
+		{
+			"image": "SnowSet.png",
+			"size": {
+				"w": 390,
+				"h": 726
+			},
+			"sprites": [
+				{
+					"filename": "snow.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowCenter.png",
+					"region": {
+						"x": 131,
+						"y": 1,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowCenter_rounded.png",
+					"region": {
+						"x": 261,
+						"y": 1,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowCliffAlt_left.png",
+					"region": {
+						"x": 1,
+						"y": 131,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowCliffAlt_right.png",
+					"region": {
+						"x": 131,
+						"y": 131,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowCliff_left.png",
+					"region": {
+						"x": 261,
+						"y": 131,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowCliff_right.png",
+					"region": {
+						"x": 1,
+						"y": 261,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowCorner_left.png",
+					"region": {
+						"x": 131,
+						"y": 261,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowCorner_right.png",
+					"region": {
+						"x": 261,
+						"y": 261,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowHill_left.png",
+					"region": {
+						"x": 1,
+						"y": 391,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowHill_right.png",
+					"region": {
+						"x": 1,
+						"y": 521,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowHalf_mid.png",
+					"region": {
+						"x": 1,
+						"y": 651,
+						"w": 128,
+						"h": 74
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 54
+					}
+				},
+				{
+					"filename": "snowLeft.png",
+					"region": {
+						"x": 131,
+						"y": 391,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowMid.png",
+					"region": {
+						"x": 261,
+						"y": 391,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowRight.png",
+					"region": {
+						"x": 131,
+						"y": 521,
+						"w": 128,
+						"h": 128
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "snowHalf.png",
+					"region": {
+						"x": 261,
+						"y": 521,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "snowHalf_left.png",
+					"region": {
+						"x": 261,
+						"y": 598,
+						"w": 128,
+						"h": 75
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 53
+					}
+				},
+				{
+					"filename": "snowHalf_right.png",
+					"region": {
+						"x": 131,
+						"y": 651,
+						"w": 128,
+						"h": 74
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 54
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:1ba5228720742aac98dd51e0b393b5f1:3720ba175b502afd860f8794159268c7:fd0b4935dd37b24845e83ce6272ce18e$"
+	}
+}

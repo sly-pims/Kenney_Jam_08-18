@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_tileset"
+type="Resource"
+path="res://.import/SnowSet.tpset-41cf0d4b6bf52d9601f9a7c276ddffa8.res"
+
+[deps]
+
+files=[ "SnowSet.png", "res://asset/Kenney_Assets/SnowSet.sprites/SnowSet.res" ]
+
+source_file="res://asset/Kenney_Assets/SnowSet.sprites/SnowSet.tpset"
+dest_files=[ "res://.import/SnowSet.tpset-41cf0d4b6bf52d9601f9a7c276ddffa8.res", "SnowSet.png", "res://asset/Kenney_Assets/SnowSet.sprites/SnowSet.res" ]
+
+[params]
+

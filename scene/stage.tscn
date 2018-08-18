@@ -380,7 +380,7 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="timeController" type="Node" parent="." index="8"]
+[node name="timeController" type="Node" parent="." index="7"]
 
 script = ExtResource( 9 )
 
