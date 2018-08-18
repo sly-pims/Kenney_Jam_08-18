@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/alienPink.tpsheet-c82e8151d69704a2fe61e22114d30778.res"
+
+[deps]
+
+files=[ "res://asset/sprite/alienPink.sprites/alienPink_swim2.tres", "res://asset/sprite/alienPink.sprites/alienPink_walk2.tres", "res://asset/sprite/alienPink.sprites/alienPink_swim1.tres", "res://asset/sprite/alienPink.sprites/alienPink_walk1.tres", "res://asset/sprite/alienPink.sprites/alienPink_jump.tres", "res://asset/sprite/alienPink.sprites/alienPink_hurt.tres", "res://asset/sprite/alienPink.sprites/alienPink.tres", "res://asset/sprite/alienPink.sprites/alienPink_climb1.tres", "res://asset/sprite/alienPink.sprites/alienPink_climb2.tres", "res://asset/sprite/alienPink.sprites/alienPink_stand.tres", "res://asset/sprite/alienPink.sprites/alienPink_duck.tres" ]
+
+source_file="res://asset/sprite/alienPink.tpsheet"
+dest_files=[ "res://.import/alienPink.tpsheet-c82e8151d69704a2fe61e22114d30778.res", "res://asset/sprite/alienPink.sprites/alienPink_swim2.tres", "res://asset/sprite/alienPink.sprites/alienPink_walk2.tres", "res://asset/sprite/alienPink.sprites/alienPink_swim1.tres", "res://asset/sprite/alienPink.sprites/alienPink_walk1.tres", "res://asset/sprite/alienPink.sprites/alienPink_jump.tres", "res://asset/sprite/alienPink.sprites/alienPink_hurt.tres", "res://asset/sprite/alienPink.sprites/alienPink.tres", "res://asset/sprite/alienPink.sprites/alienPink_climb1.tres", "res://asset/sprite/alienPink.sprites/alienPink_climb2.tres", "res://asset/sprite/alienPink.sprites/alienPink_stand.tres", "res://asset/sprite/alienPink.sprites/alienPink_duck.tres" ]
+
+[params]
+

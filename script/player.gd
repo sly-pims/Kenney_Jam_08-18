@@ -28,7 +28,6 @@ func _physics_process(delta):
 
 	if isRewinding:
 		return
-	$anim.play()
 	#increment counters
 	lifeTime -= delta;
 	onair_time += delta
@@ -66,7 +65,7 @@ func _physics_process(delta):
 	# Shooting
 	if Input.is_action_just_pressed("shoot"):
 		var bullet = preload("res://scene/bullet.tscn").instance()
-		bullet.position = $sprite/bullet_shoot.global_position #use node for shoot position
+		bullet.position = $sprite/gun/bullet_shoot.global_position #use node for shoot position
 		bullet.linear_velocity = Vector2(sprite.scale.x * BULLET_VELOCITY, 0)
 		bullet.add_collision_exception_with(self) # don't want player to collide with bullet
 		get_parent().add_child(bullet) #don't want bullet to move with me, so add it as child of parent
@@ -99,8 +98,8 @@ func _physics_process(delta):
 		else:
 			new_anim = "falling"
 
-	#if shoot_time < SHOOT_TIME_SHOW_WEAPON:
-		#new_anim += "_weapon"
+	if shoot_time < SHOOT_TIME_SHOW_WEAPON:
+		new_anim += "_weapon"
 
 	if new_anim != anim:
 		loadAndPlayAnim(new_anim)

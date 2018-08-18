@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/alienGreen.tpsheet-e0bc3d0b4f8b267e3a0bb566046839b8.res"
+
+[deps]
+
+files=[ "res://asset/sprite/alienGreen.sprites/alienGreen_swim2.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_walk2.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_swim1.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_walk1.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_jump.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_hurt.tres", "res://asset/sprite/alienGreen.sprites/alienGreen.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_climb1.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_climb2.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_stand.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_duck.tres" ]
+
+source_file="res://asset/sprite/alienGreen.tpsheet"
+dest_files=[ "res://.import/alienGreen.tpsheet-e0bc3d0b4f8b267e3a0bb566046839b8.res", "res://asset/sprite/alienGreen.sprites/alienGreen_swim2.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_walk2.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_swim1.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_walk1.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_jump.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_hurt.tres", "res://asset/sprite/alienGreen.sprites/alienGreen.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_climb1.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_climb2.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_stand.tres", "res://asset/sprite/alienGreen.sprites/alienGreen_duck.tres" ]
+
+[params]
+
