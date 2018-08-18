@@ -25,7 +25,11 @@ stretch/mode="2d"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "SpriteSheetImporter", "codeandweb.texturepacker" )
+
+enabled=PoolStringArray( "codeandweb.texturepacker" )
+=======
+enabled=PoolStringArray( "codeandweb.texturepacker" )
+
 
 [gdnative]
 

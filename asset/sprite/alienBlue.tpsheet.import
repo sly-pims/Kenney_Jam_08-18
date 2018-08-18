@@ -1,0 +1,15 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/alienBlue.tpsheet-bf8f5631a4f9577f8b557623c6f7f09d.res"
+
+[deps]
+
+files=[ "res://asset/sprite/alienBlue.sprites/alienBlue_swim2.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_walk2.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_swim1.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_jump.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_walk1.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_hurt.tres", "res://asset/sprite/alienBlue.sprites/alienBlue.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_climb1.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_climb2.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_stand.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_duck.tres" ]
+
+source_file="res://asset/sprite/alienBlue.tpsheet"
+dest_files=[ "res://.import/alienBlue.tpsheet-bf8f5631a4f9577f8b557623c6f7f09d.res", "res://asset/sprite/alienBlue.sprites/alienBlue_swim2.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_walk2.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_swim1.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_jump.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_walk1.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_hurt.tres", "res://asset/sprite/alienBlue.sprites/alienBlue.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_climb1.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_climb2.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_stand.tres", "res://asset/sprite/alienBlue.sprites/alienBlue_duck.tres" ]
+
+[params]
+

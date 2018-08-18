@@ -10,6 +10,7 @@ const SIDING_CHANGE_SPEED = 10
 const BULLET_VELOCITY = 1000
 const SHOOT_TIME_SHOW_WEAPON = 0.2
 
+onready var SPRITE_SCALE = $sprite.scale.x
 var linear_vel = Vector2()
 var onair_time = 0 #
 var on_floor = false
@@ -27,6 +28,7 @@ func _physics_process(delta):
 
 	if isRewinding:
 		return
+	$anim.play()
 	#increment counters
 	lifeTime -= delta;
 	onair_time += delta
@@ -77,29 +79,44 @@ func _physics_process(delta):
 
 	if on_floor:
 		if linear_vel.x < -SIDING_CHANGE_SPEED:
-			sprite.scale.x = -1
+			sprite.scale.x = -SPRITE_SCALE
 			new_anim = "run"
 
 		if linear_vel.x > SIDING_CHANGE_SPEED:
-			sprite.scale.x = 1
+			sprite.scale.x = SPRITE_SCALE
 			new_anim = "run"
 	else:
 		# We want the character to immediately change facing side when the player
 		# tries to change direction, during air control.
 		# This allows for example the player to shoot quickly left then right.
 		if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
-			sprite.scale.x = -1
+			sprite.scale.x = -SPRITE_SCALE
 		if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
-			sprite.scale.x = 1
+			sprite.scale.x = SPRITE_SCALE
 
 		if linear_vel.y < 0:
 			new_anim = "jumping"
 		else:
 			new_anim = "falling"
 
-	if shoot_time < SHOOT_TIME_SHOW_WEAPON:
-		new_anim += "_weapon"
+	#if shoot_time < SHOOT_TIME_SHOW_WEAPON:
+		#new_anim += "_weapon"
 
 	if new_anim != anim:
-		anim = new_anim
+		loadAndPlayAnim(new_anim)
+
+func loadAndPlayAnim(new_anim, delta = null, backwards = false):
+	if anim == new_anim:
+		return
+	anim = new_anim
+	# Check if we're playing the animation backwards or not
+	if backwards:
+		$anim.play_backwards(anim)
+	else:
 		$anim.play(anim)
+	# Advance frames
+	if delta:
+		$anim.advance(delta)
+	
+func stopAnim():
+	$anim.stop(false)
