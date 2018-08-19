@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://script/player.gd" type="Script" id=1]
 [ext_resource path="res://asset/sound/sound_jump.wav" type="AudioStream" id=2]
 [ext_resource path="res://asset/sound/sound_shoot.wav" type="AudioStream" id=3]
 [ext_resource path="res://asset/sprite/alienPink.sprites/spriteFrames.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://asset/sprite/raygun.png" type="Texture" id=5]
-[ext_resource path="res://scene/Label.gd" type="Script" id=6]
+[ext_resource path="res://asset/fonts/VeraMono.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://scene/Label.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -15,7 +16,61 @@ height = 44.4787
 
 [sub_resource type="Animation" id=2]
 
-resource_name = "falling"
+resource_name = "death"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -4.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sprite/gun:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 34.4554, 33.0151 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite/gun:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 59.1405 ]
+}
+
+[sub_resource type="Animation" id=3]
+
 length = 1.0
 loop = true
 step = 0.1
@@ -55,10 +110,21 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 37.3395 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -15 ) ]
+}
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "falling_weapon"
 length = 1.0
 loop = true
 step = 0.1
@@ -98,10 +164,21 @@ tracks/2/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -15 ) ]
+}
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource_name = "idle"
 length = 1.0
 loop = false
 step = 0.1
@@ -141,10 +218,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [ 60.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -15 ) ]
+}
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
-resource_name = "idle_weapon"
 length = 1.0
 loop = false
 step = 0.1
@@ -184,10 +272,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [ 0.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -15 ) ]
+}
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
-resource_name = "jumping"
 length = 1.0
 loop = false
 step = 0.1
@@ -227,10 +326,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [ 20.0122 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -15 ) ]
+}
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
-resource_name = "jumping_weapon"
 length = 1.0
 loop = false
 step = 0.1
@@ -270,10 +380,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [ 0.0 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -15 ) ]
+}
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
-resource_name = "run"
 length = 0.5
 loop = true
 step = 0.25
@@ -313,10 +434,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [ Vector2( 36.3925, 27.785 ), Vector2( 40.073, 21.9736 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -15 ) ]
+}
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 
-resource_name = "run_weapon"
 length = 0.5
 loop = true
 step = 0.25
@@ -356,6 +488,26 @@ tracks/2/keys = {
 "update": 1,
 "values": [ Vector2( 34.8428, 22.361 ), Vector2( 38.717, 16.9371 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -15 ) ]
+}
+
+[sub_resource type="DynamicFont" id=11]
+
+size = 40
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="player" type="KinematicBody2D" index="0"]
 
@@ -398,7 +550,7 @@ area_mask = 1
 position = Vector2( 0, -15 )
 frames = ExtResource( 4 )
 animation = "default"
-frame = 9
+frame = 10
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="smoke" type="Node2D" parent="sprite" index="0"]
@@ -408,7 +560,8 @@ rotation = -1.45648
 
 [node name="gun" type="Sprite" parent="sprite" index="1"]
 
-position = Vector2( 34.8428, 22.361 )
+position = Vector2( 40.073, 21.9736 )
+rotation = 0.651697
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
@@ -424,14 +577,15 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/falling = SubResource( 2 )
-anims/falling_weapon = SubResource( 3 )
-anims/idle = SubResource( 4 )
-anims/idle_weapon = SubResource( 5 )
-anims/jumping = SubResource( 6 )
-anims/jumping_weapon = SubResource( 7 )
-anims/run = SubResource( 8 )
-anims/run_weapon = SubResource( 9 )
+anims/death = SubResource( 2 )
+anims/falling = SubResource( 3 )
+anims/falling_weapon = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/idle_weapon = SubResource( 6 )
+anims/jumping = SubResource( 7 )
+anims/jumping_weapon = SubResource( 8 )
+anims/run = SubResource( 9 )
+anims/run_weapon = SubResource( 10 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -441,22 +595,23 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -35.5
-margin_top = -94.0
-margin_right = 0.5
-margin_bottom = -80.0
-rect_scale = Vector2( 2, 2 )
+margin_left = -62.0
+margin_top = -109.0
+margin_right = 63.0
+margin_bottom = -60.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 11 )
 text = "30.00"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 6 )
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+script = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 

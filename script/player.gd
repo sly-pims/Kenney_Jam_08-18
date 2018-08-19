@@ -24,6 +24,7 @@ var shoot_time=99999 #time since last shot
 var lifeTime = 30
 var playerIndex = 0
 var isRewinding = false
+var lives = 3
 
 var anim=""
 
@@ -33,7 +34,6 @@ onready var sprite = $sprite
 func _ready():
 	playerIndex = self.name[self.name.length() - 1]
 	$sprite.set_sprite_frames(FRAMES[int(playerIndex)])
-	print(Input.get_connected_joypads())
 	var controllerConnected = false
 	for i in Input.get_connected_joypads():
 		if i == int(playerIndex):
@@ -44,19 +44,29 @@ func _ready():
 	
 func _physics_process(delta):
 	if isRewinding:
+		if Input.is_action_just_pressed("shoot" + playerIndex) && TimeController.isReadyToResume:
+			TimeController.resumeTime()
 		return
 	#increment counters
 	lifeTime -= delta
+	if lifeTime < 0:
+		lifeTime = 0
 	onair_time += delta
 	shoot_time += delta
 
 	if lifeTime <= 0:
-		TimeController.rewindTime()
+		lives -= 1
+		loadAndPlayAnim("death")
+		if lives > 0:
+			TimeController.rewindTime()
+			return
 
 	### MOVEMENT ###
 
 	# Apply Gravity
 	linear_vel += delta * GRAVITY_VEC
+	if lives <= 0:
+		return
 	# Move and Slide
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
 	# Detect Floor
@@ -83,14 +93,16 @@ func _physics_process(delta):
 		$sound_jump.play()
 
 	# Shooting
-	if Input.is_action_just_pressed("shoot" + playerIndex):
+	if Input.is_action_just_pressed("shoot" + playerIndex) && !TimeController.isPaused:
 		var bullet = preload("res://scene/bullet.tscn").instance()
 		bullet.position = $sprite/bullet_shoot.global_position #use node for shoot position
 		bullet.linear_velocity = Vector2(sprite.scale.x * BULLET_VELOCITY, 0)
 		bullet.add_collision_exception_with(self) # don't want player to collide with bullet
+		bullet.playerOwner = self
 		get_parent().add_child(bullet) #don't want bullet to move with me, so add it as child of parent
 		$sound_shoot.play()
 		shoot_time = 0
+		lifeTime -= 1
 
 	### ANIMATION ###
 
@@ -108,9 +120,9 @@ func _physics_process(delta):
 		# We want the character to immediately change facing side when the player
 		# tries to change direction, during air control.
 		# This allows for example the player to shoot quickly left then right.
-		if Input.is_action_pressed("move_left" + playerIndex) and not Input.is_action_pressed("move_right"):
+		if Input.is_action_pressed("move_left" + playerIndex) and not Input.is_action_pressed("move_right" + playerIndex):
 			sprite.scale.x = -SPRITE_SCALE
-		if Input.is_action_pressed("move_right" + playerIndex) and not Input.is_action_pressed("move_left"):
+		if Input.is_action_pressed("move_right" + playerIndex) and not Input.is_action_pressed("move_left" + playerIndex):
 			sprite.scale.x = SPRITE_SCALE
 
 		if linear_vel.y < 0:
