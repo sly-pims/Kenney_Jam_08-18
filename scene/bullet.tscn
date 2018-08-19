@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://script/bullet.gd" type="Script" id=1]
 [ext_resource path="res://asset/sprite/bullet.png" type="Texture" id=2]
-
-
-
+[ext_resource path="res://asset/Kenney_Assets/PNG/Particles/laserPurple.png" type="Texture" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -112,7 +110,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="bullet" type="RigidBody2D" index="0"]
+[node name="bullet" type="RigidBody2D"]
 
 material = SubResource( 1 )
 input_pickable = false
@@ -163,7 +161,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Visibility" ]
 [node name="sprite" type="Sprite" parent="." index="1"]
 
 material = SubResource( 4 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]

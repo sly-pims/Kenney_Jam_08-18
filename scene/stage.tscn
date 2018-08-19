@@ -7,8 +7,8 @@
 [ext_resource path="res://scene/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/parallax_bg.tscn" type="PackedScene" id=7]
-[ext_resource path="res://asset/sound/music.ogg" type="AudioStream" id=8]
-[ext_resource path="res://script/timeController.gd" type="Script" id=9]
+[ext_resource path="res://script/timeController.gd" type="Script" id=8]
+[ext_resource path="res://asset/sound/music.ogg" type="AudioStream" id=9]
 
 [node name="stage" type="Node"]
 
@@ -371,17 +371,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="music" type="AudioStreamPlayer" parent="." index="7"]
+[node name="timeController" type="Node" parent="." index="7"]
 
-stream = ExtResource( 8 )
+script = ExtResource( 8 )
+
+[node name="music" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 9 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
-
-[node name="timeController" type="Node" parent="." index="7"]
-
-script = ExtResource( 9 )
 
 

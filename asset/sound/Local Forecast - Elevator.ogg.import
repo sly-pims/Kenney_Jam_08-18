@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Local Forecast - Elevator.ogg-ddcf9d771fd9ac97fd7dbc9907ecff91.oggstr"
+
+[deps]
+
+source_file="res://asset/sound/Local Forecast - Elevator.ogg"
+dest_files=[ "res://.import/Local Forecast - Elevator.ogg-ddcf9d771fd9ac97fd7dbc9907ecff91.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

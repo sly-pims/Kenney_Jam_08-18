@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Harmful or Fatal.ogg-79a81c12f9493c7c498d725d11327363.oggstr"
+
+[deps]
+
+source_file="res://asset/sound/Harmful or Fatal.ogg"
+dest_files=[ "res://.import/Harmful or Fatal.ogg-79a81c12f9493c7c498d725d11327363.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

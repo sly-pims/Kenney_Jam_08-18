@@ -5,7 +5,7 @@
 [resource]
 
 resource_name = "BlockFont"
-size = 74
+size = 31
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 1 )
