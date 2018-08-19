@@ -2,7 +2,8 @@
 
 [ext_resource path="res://script/bullet.gd" type="Script" id=1]
 [ext_resource path="res://asset/sprite/bullet.png" type="Texture" id=2]
-[ext_resource path="res://asset/Kenney_Assets/PNG/Particles/laserPurple.png" type="Texture" id=3]
+[ext_resource path="res://asset/Kenney_Assets/PNG/laserPurple.png" type="Texture" id=3]
+
 
 [sub_resource type="CanvasItemMaterial" id=1]
 

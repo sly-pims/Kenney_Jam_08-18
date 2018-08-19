@@ -1,0 +1,13 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/alienBeige.tpsheet-758f08ddfc7e16db0790406f3d943fd3.res"
+
+[deps]
+
+source_file="res://asset/Kenney_Assets/PNG/Particles/asset/asset/sprite/alienBeige.tpsheet"
+dest_files=[ "res://.import/alienBeige.tpsheet-758f08ddfc7e16db0790406f3d943fd3.res" ]
+
+[params]
+

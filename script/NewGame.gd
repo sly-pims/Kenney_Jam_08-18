@@ -11,5 +11,6 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton:
-		get_tree().change_scene("res://scene/NewArena.tscn")
+		get_parent().get_node("LobbyMusic").stop()
+		get_tree().change_scene("res://scene/GrassArena.tscn")
 

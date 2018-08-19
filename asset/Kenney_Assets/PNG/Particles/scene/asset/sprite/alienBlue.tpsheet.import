@@ -1,0 +1,13 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+path="res://.import/alienBlue.tpsheet-13d3ba86408acb4f0058a8f5c5fe8e9e.res"
+
+[deps]
+
+source_file="res://asset/Kenney_Assets/PNG/Particles/scene/asset/sprite/alienBlue.tpsheet"
+dest_files=[ "res://.import/alienBlue.tpsheet-13d3ba86408acb4f0058a8f5c5fe8e9e.res" ]
+
+[params]
+
