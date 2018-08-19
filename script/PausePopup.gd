@@ -21,3 +21,7 @@ func _input(event):
 		get_parent().get_node("MainGameMusic").play()
 		get_parent().get_node("pause_popup/PauseMusic").stop()
 		get_parent().get_node("pause_popup/WindowDialog").hide()
+	if event.is_pressed() and event.scancode ==  KEY_SPACE:
+		get_tree().change_scene("res://scene/MainMenu2.tscn")
+		get_tree().reload_current_scene()
+

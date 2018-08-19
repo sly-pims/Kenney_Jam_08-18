@@ -20,7 +20,7 @@
 [ext_resource path="res://asset/fonts/BlockFont.tres" type="DynamicFont" id=18]
 [ext_resource path="res://asset/sound/Lobby Time.ogg" type="AudioStream" id=19]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 _sections_unfolded = [ "Pause" ]
 
@@ -522,6 +522,8 @@ bus = "Master"
 [node name="pause_popup" type="Popup" parent="." index="6"]
 
 pause_mode = 2
+editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -542,6 +544,7 @@ _sections_unfolded = [ "Pause", "Rect" ]
 
 [node name="WindowDialog" type="WindowDialog" parent="pause_popup" index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

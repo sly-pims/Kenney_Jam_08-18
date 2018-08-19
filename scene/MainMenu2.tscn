@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://asset/fonts/BlockFont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://asset/Kenney_Assets/Alien sprites/alienBlue.png" type="Texture" id=2]
-[ext_resource path="res://asset/Kenney_Assets/PNG/Particles/icon_bullet_gold_short.png" type="Texture" id=3]
-[ext_resource path="res://asset/Kenney_Assets/Alien sprites/alienGreen_hurt.png" type="Texture" id=4]
-[ext_resource path="res://asset/sound/Lobby Time.ogg" type="AudioStream" id=5]
-[ext_resource path="res://asset/fonts/HighSquaresFont.tres" type="DynamicFont" id=6]
-[ext_resource path="res://script/NewGame.gd" type="Script" id=7]
+[ext_resource path="res://asset/sound/Lobby Time.ogg" type="AudioStream" id=1]
+[ext_resource path="res://scene/NewArena2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://asset/fonts/BlockFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://script/NewGame.gd" type="Script" id=4]
+[ext_resource path="res://asset/fonts/HighSquaresFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://asset/Kenney_Assets/Alien sprites/alienBlue.png" type="Texture" id=6]
+[ext_resource path="res://asset/Kenney_Assets/PNG/Particles/laserPurple.png" type="Texture" id=7]
+[ext_resource path="res://asset/Kenney_Assets/Alien sprites/alienPink_hurt.png" type="Texture" id=8]
+[ext_resource path="res://asset/Kenney_Assets/KenneyJam.png" type="Texture" id=9]
 
 [node name="Container" type="Container"]
 
@@ -23,126 +25,10 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." index="0"]
+[node name="LobbyMusic" type="AudioStreamPlayer2D" parent="." index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 550.0
-margin_top = 41.0
-margin_right = 1553.0
-margin_bottom = 149.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/normal_font = ExtResource( 1 )
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = "THIS IS A TITLE TEST"
-scroll_active = false
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="Sprite" type="Sprite" parent="." index="1"]
-
-position = Vector2( 254.75, 490 )
-scale = Vector2( 4.99242, 5.21739 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite2" type="Sprite" parent="." index="2"]
-
-position = Vector2( 513.263, 461.711 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite9" type="Sprite" parent="." index="3"]
-
-position = Vector2( 1583.99, 460.222 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite10" type="Sprite" parent="." index="4"]
-
-position = Vector2( 1474.52, 590.124 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite11" type="Sprite" parent="." index="5"]
-
-position = Vector2( 1334.27, 460 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite3" type="Sprite" parent="." index="6"]
-
-position = Vector2( 1193.5, 590.029 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite4" type="Sprite" parent="." index="7"]
-
-position = Vector2( 914.336, 600.142 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite5" type="Sprite" parent="." index="8"]
-
-position = Vector2( 1053.91, 460.003 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite6" type="Sprite" parent="." index="9"]
-
-position = Vector2( 774.309, 459.806 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite7" type="Sprite" parent="." index="10"]
-
-position = Vector2( 634.116, 600.419 )
-rotation = 1.5708
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite8" type="Sprite" parent="." index="11"]
-
-position = Vector2( 1817, 540 )
-scale = Vector2( 4.92369, 5.21739 )
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="12"]
-
-stream = ExtResource( 5 )
-volume_db = 20.0
+stream = ExtResource( 1 )
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 max_distance = 2000.0
@@ -150,16 +36,18 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="Button" type="Button" parent="." index="13"]
+[node name="Node2D" parent="." index="1" instance=ExtResource( 2 )]
+
+[node name="Button" type="Button" parent="Node2D" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 950.0
-margin_top = 232.0
-margin_right = 1140.0
-margin_bottom = 290.0
+margin_left = 545.0
+margin_top = 206.0
+margin_right = 744.0
+margin_bottom = 264.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -167,7 +55,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -175,6 +63,60 @@ group = null
 text = "NEW GAME"
 flat = false
 align = 1
-script = ExtResource( 7 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Label" type="Label" parent="Node2D" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 462.0
+margin_top = 58.0
+margin_right = 822.0
+margin_bottom = 119.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "this  is a test title"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="alienBlue" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 355, 389 )
+texture = ExtResource( 6 )
+
+[node name="laserPurple" type="Sprite" parent="alienBlue" index="0"]
+
+position = Vector2( 60, 23 )
+texture = ExtResource( 7 )
+
+[node name="laserPurple2" type="Sprite" parent="alienBlue" index="1"]
+
+position = Vector2( 110, 12 )
+texture = ExtResource( 7 )
+
+[node name="alienPink_hurt" type="Sprite" parent="." index="3"]
+
+position = Vector2( 526, 365 )
+texture = ExtResource( 8 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="Sprite" type="Sprite" parent="." index="4"]
+
+position = Vector2( 1091, 650 )
+scale = Vector2( 0.464151, 0.465 )
+texture = ExtResource( 9 )
 
 
