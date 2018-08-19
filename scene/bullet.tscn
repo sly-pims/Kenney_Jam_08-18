@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://script/bullet.gd" type="Script" id=1]
-[ext_resource path="res://asset/sprite/bullet.png" type="Texture" id=2]
+[ext_resource path="res://asset/sprite/laserPurple.png" type="Texture" id=2]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -52,7 +52,7 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Color", "Trail" ]
+_sections_unfolded = [ "Color", "Emission Shape" ]
 
 [sub_resource type="CanvasItemMaterial" id=4]
 
@@ -60,14 +60,15 @@ render_priority = 0
 blend_mode = 0
 light_mode = 0
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=7]
 
 custom_solver_bias = 0.0
-radius = 10.0
+radius = 11.1861
+height = 14.2183
 
 [sub_resource type="Animation" id=6]
 
-length = 1.5
+length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "method"
@@ -77,7 +78,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1.31 ),
+"times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -91,7 +92,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -103,7 +104,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -131,12 +132,12 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Angular", "Collision", "Linear", "Material", "Pickable", "Transform", "Visibility", "Z" ]
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Material", "Pickable", "Transform", "Visibility", "Z" ]
 
 [node name="Particles2D" type="Particles2D" parent="." index="0"]
 
-visible = false
 material = SubResource( 2 )
+position = Vector2( -0.358475, -0.716965 )
 emitting = true
 amount = 8
 lifetime = 0.3
@@ -155,7 +156,7 @@ texture = ExtResource( 2 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Process Material", "Visibility" ]
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Visibility" ]
 
 [node name="sprite" type="Sprite" parent="." index="1"]
 
@@ -165,18 +166,13 @@ _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform",
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( -2.31244, 2.25315 )
-shape = SubResource( 5 )
+position = Vector2( 0.71698, -1.04908 )
+rotation = 1.5708
+scale = Vector2( 0.592881, 1 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z" ]
 
-[node name="Timer" type="Timer" parent="." index="3"]
-
-process_mode = 1
-wait_time = 3.0
-one_shot = true
-autostart = true
-
-[node name="anim" type="AnimationPlayer" parent="." index="4"]
+[node name="anim" type="AnimationPlayer" parent="." index="3"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -187,7 +183,5 @@ anims/shutdown = SubResource( 6 )
 blend_times = [  ]
 
 [connection signal="body_entered" from="." to="." method="_on_bullet_body_enter"]
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

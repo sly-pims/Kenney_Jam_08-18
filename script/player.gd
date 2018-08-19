@@ -24,6 +24,7 @@ var shoot_time=99999 #time since last shot
 var lifeTime = 30
 var playerIndex = 0
 var isRewinding = false
+var lives = 3
 
 var anim=""
 
@@ -33,7 +34,6 @@ onready var sprite = $sprite
 func _ready():
 	playerIndex = self.name[self.name.length() - 1]
 	$sprite.set_sprite_frames(FRAMES[int(playerIndex)])
-	print(Input.get_connected_joypads())
 	var controllerConnected = false
 	for i in Input.get_connected_joypads():
 		if i == int(playerIndex):
@@ -47,11 +47,17 @@ func _physics_process(delta):
 		return
 	#increment counters
 	lifeTime -= delta
+	if lifeTime < 0:
+		lifeTime = 0
 	onair_time += delta
 	shoot_time += delta
 
 	if lifeTime <= 0:
-		TimeController.rewindTime()
+		lives -= 1
+		loadAndPlayAnim("death")
+		if lives > 0:
+			TimeController.rewindTime()
+			return
 
 	### MOVEMENT ###
 
@@ -64,6 +70,9 @@ func _physics_process(delta):
 		onair_time = 0
 
 	on_floor = onair_time < MIN_ONAIR_TIME
+
+	if lives <= 0:
+		return
 
 	### CONTROL ###
 
@@ -108,9 +117,9 @@ func _physics_process(delta):
 		# We want the character to immediately change facing side when the player
 		# tries to change direction, during air control.
 		# This allows for example the player to shoot quickly left then right.
-		if Input.is_action_pressed("move_left" + playerIndex) and not Input.is_action_pressed("move_right"):
+		if Input.is_action_pressed("move_left" + playerIndex) and not Input.is_action_pressed("move_right" + playerIndex):
 			sprite.scale.x = -SPRITE_SCALE
-		if Input.is_action_pressed("move_right" + playerIndex) and not Input.is_action_pressed("move_left"):
+		if Input.is_action_pressed("move_right" + playerIndex) and not Input.is_action_pressed("move_left" + playerIndex):
 			sprite.scale.x = SPRITE_SCALE
 
 		if linear_vel.y < 0:

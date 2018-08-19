@@ -135,5 +135,9 @@ func _input(event):
 		
 func isPlayerInstanceValid(player):
 	var wr = weakref(player)
-	return wr.get_ref()
+#	return wr.get_ref()
+	if wr.get_ref():
+		return player.is_class('KinematicBody2D')
+	else:
+		return false
 	
