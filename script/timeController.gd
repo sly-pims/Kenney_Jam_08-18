@@ -23,9 +23,12 @@ onready var timer = get_node('timer')
 var playerCount = 4
 
 onready var vhsShader = get_node('../Camera2D/vhsShader')
+onready var vhsPauseText = get_node('../vhsText/pause')
+onready var vhsRewindText = get_node('../vhsText/rewind')
+onready var vhsPlayText = get_node('../vhsText/play')
 
 func _process(delta):
-	if rewindFramesLeft <= 0 && !isRewinding:
+	if rewindFramesLeft <= 0 && !isRewinding:		
 		var playerFrames = []
 		for i in range(playerCount):
 			playerFrames.push_back(getPlayerInfo(i))
@@ -69,6 +72,8 @@ func _process(delta):
 				if previousPlayerFrame:
 					setPlayerVelocity(i, previousFrame.getPlayerFrame(i))
 	else:
+		vhsRewindText.visible = false
+		vhsPauseText.visible = true
 		stopPlayerAnim()
 
 func getPlayerInfo(playerIndex):
@@ -113,29 +118,33 @@ func stopPlayerAnim():
 			players[i].stopAnim()
 		
 func rewindTime():
+	vhsRewindText.visible = false
+	vhsPauseText.visible = true
+	
 	setPlayersRewinding(true)
 	vhsShader.visible = true
 	timer.start()
 
 func _rewindTime():
+	vhsRewindText.visible = true
+	vhsPauseText.visible = false
 	isRewinding = true
 	rewindFramesLeft = rewindTime
 	timer.stop()
 
 func resumeTime():
+	vhsRewindText.visible = false
+	vhsPauseText.visible = false
+	vhsPlayText.display()
+	if rewindFramesLeft > 0:
+		return
 	isRewinding = false
 	vhsShader.visible = false
 	setPlayersRewinding(false)
 
-func _input(event):
-	if event is InputEventKey and event.scancode == KEY_K and not event.echo:
-		rewindTime()
-	if event is InputEventKey and event.scancode == KEY_L and not event.echo:
-		resumeTime()
-		
 func isPlayerInstanceValid(player):
 	var wr = weakref(player)
-#	return wr.get_ref()
+
 	if wr.get_ref():
 		return player.is_class('KinematicBody2D')
 	else:

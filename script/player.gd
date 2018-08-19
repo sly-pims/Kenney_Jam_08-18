@@ -44,6 +44,8 @@ func _ready():
 	
 func _physics_process(delta):
 	if isRewinding:
+		if Input.is_action_just_pressed("shoot" + playerIndex):
+			TimeController.resumeTime()
 		return
 	#increment counters
 	lifeTime -= delta
@@ -63,6 +65,8 @@ func _physics_process(delta):
 
 	# Apply Gravity
 	linear_vel += delta * GRAVITY_VEC
+	if lives <= 0:
+		return
 	# Move and Slide
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
 	# Detect Floor
@@ -70,9 +74,6 @@ func _physics_process(delta):
 		onair_time = 0
 
 	on_floor = onair_time < MIN_ONAIR_TIME
-
-	if lives <= 0:
-		return
 
 	### CONTROL ###
 
@@ -100,6 +101,7 @@ func _physics_process(delta):
 		get_parent().add_child(bullet) #don't want bullet to move with me, so add it as child of parent
 		$sound_shoot.play()
 		shoot_time = 0
+		lifeTime -= 1
 
 	### ANIMATION ###
 
