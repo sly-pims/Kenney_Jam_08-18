@@ -87,7 +87,7 @@ render_priority = 1
 shader = SubResource( 1 )
 shader_param/iResolution = null
 
-[node name="stage" type="Node" index="0"]
+[node name="stage" type="Node"]
 
 [node name="tile_map" type="TileMap" parent="." index="0"]
 

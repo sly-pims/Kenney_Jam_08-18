@@ -104,11 +104,13 @@ func popFramesAndGetDelta(count):
 
 func setPlayersRewinding(isRewinding):
 	for i in range(playerCount):
-		players[i].isRewinding = isRewinding
+		if isPlayerInstanceValid(players[i]):
+			players[i].isRewinding = isRewinding
 
 func stopPlayerAnim():
 	for i in range(playerCount):
-		players[i].stopAnim()
+		if isPlayerInstanceValid(players[i]):
+			players[i].stopAnim()
 		
 func rewindTime():
 	setPlayersRewinding(true)
