@@ -1,0 +1,15 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+
+flags = 7
+load_path = "res://.import/alienYellow.png-ddba67c22511f93cfd1508bd6c40ec0d.stex"
+
+[resource]
+
+flags = 7
+atlas = SubResource( 1 )
+region = Rect2( 1, 433, 68, 67 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+

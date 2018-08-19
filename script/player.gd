@@ -9,14 +9,20 @@ const JUMP_SPEED = 480
 const SIDING_CHANGE_SPEED = 10
 const BULLET_VELOCITY = 1000
 const SHOOT_TIME_SHOW_WEAPON = 0.2
+const BEIGE_FRAMES = preload('res://asset/sprite/alienBeige.sprites/spriteFrames.tres')
+const BLUE_FRAMES = preload('res://asset/sprite/alienBlue.sprites/spriteFrames.tres')
+const GREEN_FRAMES = preload('res://asset/sprite/alienGreen.sprites/spriteFrames.tres')
+const PINK_FRAMES = preload('res://asset/sprite/alienPink.sprites/spriteFrames.tres')
+const FRAMES = [BEIGE_FRAMES, BLUE_FRAMES, GREEN_FRAMES, PINK_FRAMES]
 
 onready var SPRITE_SCALE = $sprite.scale.x
+onready var TimeController = get_node('../timeController')
 var linear_vel = Vector2()
 var onair_time = 0 #
 var on_floor = false
 var shoot_time=99999 #time since last shot
-var lifeTime = 30;
-
+var lifeTime = 30
+var playerIndex = 0
 var isRewinding = false
 
 var anim=""
@@ -24,15 +30,28 @@ var anim=""
 #cache the sprite here for fast access (we will set scale to flip it often)
 onready var sprite = $sprite
 
+func _ready():
+	playerIndex = self.name[self.name.length() - 1]
+	$sprite.set_sprite_frames(FRAMES[int(playerIndex)])
+	print(Input.get_connected_joypads())
+	var controllerConnected = false
+	for i in Input.get_connected_joypads():
+		if i == int(playerIndex):
+			controllerConnected = true
+			break
+	if !controllerConnected:
+		queue_free()
+	
 func _physics_process(delta):
-
 	if isRewinding:
 		return
-	$anim.play()
 	#increment counters
-	lifeTime -= delta;
+	lifeTime -= delta
 	onair_time += delta
 	shoot_time += delta
+
+	if lifeTime <= 0:
+		TimeController.rewindTime()
 
 	### MOVEMENT ###
 
@@ -50,21 +69,21 @@ func _physics_process(delta):
 
 	# Horizontal Movement
 	var target_speed = 0
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left" + playerIndex):
 		target_speed += -1
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right" + playerIndex):
 		target_speed +=  1
 
 	target_speed *= WALK_SPEED
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
 
 	# Jumping
-	if on_floor and Input.is_action_just_pressed("jump"):
+	if on_floor and Input.is_action_just_pressed("jump" + playerIndex):
 		linear_vel.y = -JUMP_SPEED
 		$sound_jump.play()
 
 	# Shooting
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot" + playerIndex):
 		var bullet = preload("res://scene/bullet.tscn").instance()
 		bullet.position = $sprite/bullet_shoot.global_position #use node for shoot position
 		bullet.linear_velocity = Vector2(sprite.scale.x * BULLET_VELOCITY, 0)
@@ -89,9 +108,9 @@ func _physics_process(delta):
 		# We want the character to immediately change facing side when the player
 		# tries to change direction, during air control.
 		# This allows for example the player to shoot quickly left then right.
-		if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
+		if Input.is_action_pressed("move_left" + playerIndex) and not Input.is_action_pressed("move_right"):
 			sprite.scale.x = -SPRITE_SCALE
-		if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
+		if Input.is_action_pressed("move_right" + playerIndex) and not Input.is_action_pressed("move_left"):
 			sprite.scale.x = SPRITE_SCALE
 
 		if linear_vel.y < 0:
@@ -99,24 +118,26 @@ func _physics_process(delta):
 		else:
 			new_anim = "falling"
 
-	#if shoot_time < SHOOT_TIME_SHOW_WEAPON:
-		#new_anim += "_weapon"
+	if shoot_time < SHOOT_TIME_SHOW_WEAPON:
+		new_anim += "_weapon"
 
-	if new_anim != anim:
-		loadAndPlayAnim(new_anim)
+	loadAndPlayAnim(new_anim)
 
-func loadAndPlayAnim(new_anim, delta = null, backwards = false):
+func loadAndPlayAnim(new_anim, delta = null):
 	if anim == new_anim:
 		return
+	
 	anim = new_anim
-	# Check if we're playing the animation backwards or not
-	if backwards:
-		$anim.play_backwards(anim)
-	else:
-		$anim.play(anim)
+	
+	$anim.play(anim)
 	# Advance frames
 	if delta:
 		$anim.advance(delta)
 	
 func stopAnim():
 	$anim.stop(false)
+
+func hitByBullet():
+	lifeTime -= 5
+	if(lifeTime < 0):
+		lifeTime = 0
