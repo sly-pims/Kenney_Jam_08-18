@@ -1,15 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://asset/sprite/tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://scene/coin.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scene/moving_platform.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scene/one_way_platform.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scene/enemy.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scene/parallax_bg.tscn" type="PackedScene" id=7]
-[ext_resource path="res://asset/sound/music.ogg" type="AudioStream" id=8]
-[ext_resource path="res://script/timeController.gd" type="Script" id=9]
-[ext_resource path="res://asset/white.png" type="Texture" id=10]
+[ext_resource path="res://scene/moving_platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/one_way_platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scene/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/parallax_bg.tscn" type="PackedScene" id=5]
+[ext_resource path="res://asset/sound/music.ogg" type="AudioStream" id=6]
+[ext_resource path="res://script/timeController.gd" type="Script" id=7]
+[ext_resource path="res://asset/white.png" type="Texture" id=8]
 
 [sub_resource type="Shader" id=1]
 
@@ -17,8 +15,8 @@ code = "shader_type canvas_item;
 
 uniform vec2 iResolution = vec2(1920.0, 1080.0);
 
-float noise(vec2 co){
-    return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+float noise(vec2 co, float time){
+    return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453 * time);
 }
 
 float onOff(float a, float b, float c, float time)
@@ -37,7 +35,7 @@ float ramp(float y, float start, float end)
 float stripes(vec2 uv, float time)
 {
 	
-	float noi = noise(uv*vec2(0.5,1.0) + vec2(1.0,3.0));
+	float noi = noise(uv*vec2(0.5,1.0) + vec2(1.0,3.0), time);
 	return ramp(mod(uv.y*4.0 + time/2.0+sin(time + sin(time*0.63)),1.0),0.5,0.6)*noi;
 }
 
@@ -70,8 +68,8 @@ void fragment()
 	float vignette = (1.0-vigAmt*(uv.y-.5)*(uv.y-.5))*(1.0-vigAmt*(uv.x-.5)*(uv.x-.5));
 	
 	video += stripes(uv,TIME);
-	video += noise(uv*2.0)/2.0;
-	video *= vignette;
+	video += noise(uv*2.0, TIME)/2.0;
+	//video *= vignette;
 	video *= (12.0+mod(uv.y*30.0+TIME,1.0))/13.0;
 	
 	//fragColor = vec4(video,1.0);
@@ -87,7 +85,7 @@ render_priority = 1
 shader = SubResource( 1 )
 shader_param/iResolution = null
 
-[node name="stage" type="Node"]
+[node name="stage" type="Node" index="0"]
 
 [node name="tile_map" type="TileMap" parent="." index="0"]
 
@@ -112,334 +110,114 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="coins" type="Node" parent="." index="1"]
+[node name="props" type="Node" parent="." index="1"]
 
 editor/display_folded = true
 
-[node name="coin" parent="coins" index="0" instance=ExtResource( 2 )]
-
-position = Vector2( 672, 1179 )
-
-[node name="coin 2" parent="coins" index="1" instance=ExtResource( 2 )]
-
-position = Vector2( 704, 1179 )
-
-[node name="coin 3" parent="coins" index="2" instance=ExtResource( 2 )]
-
-position = Vector2( 736, 1179 )
-
-[node name="coin 4" parent="coins" index="3" instance=ExtResource( 2 )]
-
-position = Vector2( 1120, 992 )
-
-[node name="coin 5" parent="coins" index="4" instance=ExtResource( 2 )]
-
-position = Vector2( 1152, 992 )
-
-[node name="coin 6" parent="coins" index="5" instance=ExtResource( 2 )]
-
-position = Vector2( 1184, 992 )
-
-[node name="coin 7" parent="coins" index="6" instance=ExtResource( 2 )]
-
-position = Vector2( 1216, 992 )
-
-[node name="coin 8" parent="coins" index="7" instance=ExtResource( 2 )]
-
-position = Vector2( 1248, 992 )
-
-[node name="coin 9" parent="coins" index="8" instance=ExtResource( 2 )]
-
-position = Vector2( 1568, 864 )
-
-[node name="coin 10" parent="coins" index="9" instance=ExtResource( 2 )]
-
-position = Vector2( 1632, 864 )
-
-[node name="coin 11" parent="coins" index="10" instance=ExtResource( 2 )]
-
-position = Vector2( 1169.44, 677.369 )
-
-[node name="coin 12" parent="coins" index="11" instance=ExtResource( 2 )]
-
-position = Vector2( 1233.44, 677.369 )
-
-[node name="coin 13" parent="coins" index="12" instance=ExtResource( 2 )]
-
-position = Vector2( 924.453, 566.264 )
-
-[node name="coin 14" parent="coins" index="13" instance=ExtResource( 2 )]
-
-position = Vector2( 988.453, 566.264 )
-
-[node name="coin 15" parent="coins" index="14" instance=ExtResource( 2 )]
-
-position = Vector2( 983.872, 336.653 )
-
-[node name="coin 16" parent="coins" index="15" instance=ExtResource( 2 )]
-
-position = Vector2( 1047.87, 336.653 )
-
-[node name="coin 17" parent="coins" index="16" instance=ExtResource( 2 )]
-
-position = Vector2( 1111.87, 336.653 )
-
-[node name="coin 18" parent="coins" index="17" instance=ExtResource( 2 )]
-
-position = Vector2( 1111.87, 272.653 )
-
-[node name="coin 19" parent="coins" index="18" instance=ExtResource( 2 )]
-
-position = Vector2( 1047.87, 272.653 )
-
-[node name="coin 20" parent="coins" index="19" instance=ExtResource( 2 )]
-
-position = Vector2( 983.872, 272.653 )
-
-[node name="coin 21" parent="coins" index="20" instance=ExtResource( 2 )]
-
-position = Vector2( 3726.65, 1102.79 )
-
-[node name="coin 22" parent="coins" index="21" instance=ExtResource( 2 )]
-
-position = Vector2( 89.5989, 481.217 )
-
-[node name="coin 23" parent="coins" index="22" instance=ExtResource( 2 )]
-
-position = Vector2( 3735.94, 1095.49 )
-
-[node name="coin 24" parent="coins" index="23" instance=ExtResource( 2 )]
-
-position = Vector2( 3743.9, 1084.22 )
-
-[node name="coin 25" parent="coins" index="24" instance=ExtResource( 2 )]
-
-position = Vector2( 3745.23, 1072.28 )
-
-[node name="coin 26" parent="coins" index="25" instance=ExtResource( 2 )]
-
-position = Vector2( 3733.95, 1063.65 )
-
-[node name="coin 27" parent="coins" index="26" instance=ExtResource( 2 )]
-
-position = Vector2( 3725.99, 1072.94 )
-
-[node name="coin 28" parent="coins" index="27" instance=ExtResource( 2 )]
-
-position = Vector2( 88.272, 448.71 )
-
-[node name="coin 29" parent="coins" index="28" instance=ExtResource( 2 )]
-
-position = Vector2( 79.6476, 457.334 )
-
-[node name="coin 30" parent="coins" index="29" instance=ExtResource( 2 )]
-
-position = Vector2( 82.9647, 468.612 )
-
-[node name="coin 31" parent="coins" index="30" instance=ExtResource( 2 )]
-
-position = Vector2( 2159.07, 1356.49 )
-
-[node name="coin 31 2" parent="coins" index="31" instance=ExtResource( 2 )]
-
-position = Vector2( 2223.07, 1356.49 )
-
-[node name="coin 31 3" parent="coins" index="32" instance=ExtResource( 2 )]
-
-position = Vector2( 2287.07, 1356.49 )
-
-[node name="coin 31 4" parent="coins" index="33" instance=ExtResource( 2 )]
-
-position = Vector2( 2287.07, 1292.49 )
-
-[node name="coin 31 5" parent="coins" index="34" instance=ExtResource( 2 )]
-
-position = Vector2( 2223.07, 1292.49 )
-
-[node name="coin 31 6" parent="coins" index="35" instance=ExtResource( 2 )]
-
-position = Vector2( 2159.07, 1292.49 )
-
-[node name="coin 32" parent="coins" index="36" instance=ExtResource( 2 )]
-
-position = Vector2( 4172.75, 605.058 )
-
-[node name="coin 31 7" parent="coins" index="37" instance=ExtResource( 2 )]
-
-position = Vector2( 4236.75, 605.058 )
-
-[node name="coin 31 7 2" parent="coins" index="38" instance=ExtResource( 2 )]
-
-position = Vector2( 4300.75, 605.058 )
-
-[node name="coin 31 7 3" parent="coins" index="39" instance=ExtResource( 2 )]
-
-position = Vector2( 4300.75, 541.058 )
-
-[node name="coin 31 7 4" parent="coins" index="40" instance=ExtResource( 2 )]
-
-position = Vector2( 4236.75, 541.058 )
-
-[node name="coin 31 7 5" parent="coins" index="41" instance=ExtResource( 2 )]
-
-position = Vector2( 4172.75, 541.058 )
-
-[node name="props" type="Node" parent="." index="2"]
-
-editor/display_folded = true
-
-[node name="moving_platform" parent="props" index="0" instance=ExtResource( 3 )]
+[node name="moving_platform" parent="props" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 1451.86, 742.969 )
 
-[node name="moving_platform 2" parent="props" index="1" instance=ExtResource( 3 )]
+[node name="moving_platform 2" parent="props" index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 719.199, 1123.81 )
 motion = Vector2( 100, 0 )
 cycle = 4.0
 
-[node name="still" parent="props" index="2" instance=ExtResource( 3 )]
+[node name="still" parent="props" index="2" instance=ExtResource( 2 )]
 
 position = Vector2( 1231.37, 1105.18 )
 rotation = -0.163314
 
-[node name="still1" parent="props" index="3" instance=ExtResource( 3 )]
+[node name="still1" parent="props" index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 1384.28, 1066.4 )
 rotation = -0.321902
 
-[node name="still2" parent="props" index="4" instance=ExtResource( 3 )]
+[node name="still2" parent="props" index="4" instance=ExtResource( 2 )]
 
 position = Vector2( 1552.7, 1032.05 )
 rotation = -0.0826906
 
-[node name="still3" parent="props" index="5" instance=ExtResource( 3 )]
+[node name="still3" parent="props" index="5" instance=ExtResource( 2 )]
 
 position = Vector2( 1700.06, 1066.92 )
 rotation = 0.547997
 
-[node name="one_way_platform" parent="props" index="6" instance=ExtResource( 4 )]
+[node name="one_way_platform" parent="props" index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 1099.56, 940.804 )
 
-[node name="one_way_platform13" parent="props" index="7" instance=ExtResource( 4 )]
+[node name="one_way_platform13" parent="props" index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 1339.63, 967.879 )
 
-[node name="one_way_platform1" parent="props" index="8" instance=ExtResource( 4 )]
+[node name="one_way_platform1" parent="props" index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 967.609, 836.547 )
 
-[node name="one_way_platform2" parent="props" index="9" instance=ExtResource( 4 )]
+[node name="one_way_platform2" parent="props" index="9" instance=ExtResource( 3 )]
 
 position = Vector2( 1190.78, 754.282 )
 
-[node name="one_way_platform3" parent="props" index="10" instance=ExtResource( 4 )]
+[node name="one_way_platform3" parent="props" index="10" instance=ExtResource( 3 )]
 
 position = Vector2( 953.762, 638.622 )
 
-[node name="one_way_platform6" parent="props" index="11" instance=ExtResource( 4 )]
+[node name="one_way_platform6" parent="props" index="11" instance=ExtResource( 3 )]
 
 position = Vector2( 1192.93, 520.298 )
 
-[node name="one_way_platform4" parent="props" index="12" instance=ExtResource( 4 )]
+[node name="one_way_platform4" parent="props" index="12" instance=ExtResource( 3 )]
 
 position = Vector2( 1256.76, 638.622 )
 
-[node name="one_way_platform7" parent="props" index="13" instance=ExtResource( 4 )]
+[node name="one_way_platform7" parent="props" index="13" instance=ExtResource( 3 )]
 
 position = Vector2( 2784.9, 1655.71 )
 
-[node name="one_way_platform8" parent="props" index="14" instance=ExtResource( 4 )]
+[node name="one_way_platform8" parent="props" index="14" instance=ExtResource( 3 )]
 
 position = Vector2( 2976.23, 1555 )
 
-[node name="one_way_platform9" parent="props" index="15" instance=ExtResource( 4 )]
+[node name="one_way_platform9" parent="props" index="15" instance=ExtResource( 3 )]
 
 position = Vector2( 3122.25, 1469.41 )
 
-[node name="one_way_platform10" parent="props" index="16" instance=ExtResource( 4 )]
+[node name="one_way_platform10" parent="props" index="16" instance=ExtResource( 3 )]
 
 position = Vector2( 3200.29, 1353.6 )
 
-[node name="one_way_platform11" parent="props" index="17" instance=ExtResource( 4 )]
+[node name="one_way_platform11" parent="props" index="17" instance=ExtResource( 3 )]
 
 position = Vector2( 3200.29, 1237.8 )
 
-[node name="one_way_platform5" parent="props" index="18" instance=ExtResource( 4 )]
+[node name="one_way_platform5" parent="props" index="18" instance=ExtResource( 3 )]
 
 position = Vector2( 1039.29, 409.746 )
 
-[node name="player0" parent="." index="3" instance=ExtResource( 5 )]
+[node name="player0" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 251.684, 1045.6 )
 
-[node name="player1" parent="." index="4" instance=ExtResource( 5 )]
+[node name="player1" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 400.684, 1048.6 )
 
-[node name="player2" parent="." index="5" instance=ExtResource( 5 )]
+[node name="player2" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 902.685, 1303.6 )
 
-[node name="player3" parent="." index="6" instance=ExtResource( 5 )]
+[node name="player3" parent="." index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 568.684, 1251.6 )
 
-[node name="enemies" type="Node" parent="." index="7"]
-
-editor/display_folded = true
-
-[node name="enemy 5" parent="enemies" index="0" instance=ExtResource( 6 )]
-
-position = Vector2( 734.693, 1064.22 )
-
-[node name="enemy 6" parent="enemies" index="1" instance=ExtResource( 6 )]
-
-position = Vector2( 707.665, 1225.05 )
-
-[node name="enemy 7" parent="enemies" index="2" instance=ExtResource( 6 )]
-
-position = Vector2( 1125.21, 1053.06 )
-
-[node name="enemy 8" parent="enemies" index="3" instance=ExtResource( 6 )]
-
-position = Vector2( 1292.11, 1059.24 )
-
-[node name="enemy 9" parent="enemies" index="4" instance=ExtResource( 6 )]
-
-position = Vector2( 968.927, 766.466 )
-
-[node name="enemy 10" parent="enemies" index="5" instance=ExtResource( 6 )]
-
-position = Vector2( 3080.34, 1807.61 )
-
-[node name="enemy 11" parent="enemies" index="6" instance=ExtResource( 6 )]
-
-position = Vector2( 1457.6, 688.741 )
-
-[node name="enemy 12" parent="enemies" index="7" instance=ExtResource( 6 )]
-
-position = Vector2( 1264.06, 571.713 )
-
-[node name="enemy 13" parent="enemies" index="8" instance=ExtResource( 6 )]
-
-position = Vector2( 3590.85, 1114.86 )
-
-[node name="enemy 14" parent="enemies" index="9" instance=ExtResource( 6 )]
-
-position = Vector2( 3546.2, 1356.19 )
-
-[node name="enemy 15" parent="enemies" index="10" instance=ExtResource( 6 )]
-
-position = Vector2( 2215.3, 1429.39 )
-
-[node name="parallax_bg" parent="." index="8" instance=ExtResource( 7 )]
+[node name="parallax_bg" parent="." index="6" instance=ExtResource( 5 )]
 
 scale = Vector2( 3, 3 )
 transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 
-[node name="Label" type="Label" parent="." index="9"]
+[node name="Label" type="Label" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -461,19 +239,19 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="music" type="AudioStreamPlayer" parent="." index="10"]
+[node name="music" type="AudioStreamPlayer" parent="." index="8"]
 
-stream = ExtResource( 8 )
+stream = ExtResource( 6 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="timeController" type="Node" parent="." index="11"]
+[node name="timeController" type="Node" parent="." index="9"]
 
 editor/display_folded = true
-script = ExtResource( 9 )
+script = ExtResource( 7 )
 
 [node name="timer" type="Timer" parent="timeController" index="0"]
 
@@ -482,7 +260,7 @@ wait_time = 0.5
 one_shot = false
 autostart = false
 
-[node name="Camera2D" type="Camera2D" parent="." index="12"]
+[node name="Camera2D" type="Camera2D" parent="." index="10"]
 
 position = Vector2( 531.784, 1154.64 )
 anchor_mode = 1
@@ -527,7 +305,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 8 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
