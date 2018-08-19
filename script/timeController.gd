@@ -8,6 +8,8 @@ var Frame = load('res://script/frame.gd')
 var PlayerFrame = load('res://script/playerFrame.gd')
 
 var isRewinding = false
+var isPaused = false
+var isReadyToResume = false
 var rewindFramesLeft = 0
 var frames = []
 
@@ -74,6 +76,7 @@ func _process(delta):
 	else:
 		vhsRewindText.visible = false
 		vhsPauseText.visible = true
+		isReadyToResume = true
 		stopPlayerAnim()
 
 func getPlayerInfo(playerIndex):
@@ -118,11 +121,13 @@ func stopPlayerAnim():
 			players[i].stopAnim()
 		
 func rewindTime():
+	get_tree().call_group("bullets", "queue_free")
 	vhsRewindText.visible = false
 	vhsPauseText.visible = true
 	
 	setPlayersRewinding(true)
 	vhsShader.visible = true
+	isPaused = true
 	timer.start()
 
 func _rewindTime():
@@ -130,9 +135,11 @@ func _rewindTime():
 	vhsPauseText.visible = false
 	isRewinding = true
 	rewindFramesLeft = rewindTime
+	isPaused = false
 	timer.stop()
 
 func resumeTime():
+	isReadyToResume = false
 	vhsRewindText.visible = false
 	vhsPauseText.visible = false
 	vhsPlayText.display()

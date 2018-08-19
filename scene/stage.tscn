@@ -132,7 +132,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[node name="stage" type="Node" index="0"]
+[node name="stage" type="Node"]
 
 [node name="tile_map" type="TileMap" parent="." index="0"]
 
@@ -427,7 +427,7 @@ stretch_mode = 0
 [node name="rewind" type="Node2D" parent="vhsText" index="2"]
 
 visible = false
-position = Vector2( 36.0001, 259 )
+position = Vector2( 91.3649, 314.365 )
 
 [node name="Label" type="Label" parent="vhsText/rewind" index="0"]
 
@@ -474,7 +474,7 @@ stretch_mode = 0
 [node name="play" type="Node2D" parent="vhsText" index="3"]
 
 visible = false
-position = Vector2( 36.0001, 259 )
+position = Vector2( 91.3649, 312.314 )
 script = ExtResource( 12 )
 _sections_unfolded = [ "Visibility" ]
 

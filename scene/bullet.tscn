@@ -60,7 +60,7 @@ render_priority = 0
 blend_mode = 0
 light_mode = 0
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=5]
 
 custom_solver_bias = 0.0
 radius = 11.1861
@@ -110,7 +110,9 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="bullet" type="RigidBody2D"]
+[node name="bullet" type="RigidBody2D" groups=[
+"bullets",
+]]
 
 material = SubResource( 1 )
 input_pickable = false
@@ -169,7 +171,7 @@ _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform",
 position = Vector2( 0.71698, -1.04908 )
 rotation = 1.5708
 scale = Vector2( 0.592881, 1 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z" ]
 
 [node name="anim" type="AnimationPlayer" parent="." index="3"]
